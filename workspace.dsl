@@ -8,6 +8,9 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			external_shared_component = softwareSystem "External Shared Component" {
 				tag "External Shared Component"
 			}
+			external_data_user = softwareSystem "External Data User" {
+				tag "External Data User"
+			}
 		}
 		
 		// Diabetic Eye Screening (DES) Pathway
@@ -21,16 +24,15 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		quicksilva -> des_screening_service
 		
 		// Common components
-
 		gpms = softwareSystem "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
 		pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
 		pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
 		caas = external_shared_component "Cohorting as a Service (CAAS)"
 		cohort_manager = softwareSystem "Cohort Manager"
 		lims = softwareSystem "Lab Information Systems (LIMS)"
-		shim = softwareSystem "SHIM"
-		ncras = softwareSystem "NCRAS"
-		encore = softwareSystem "ENCORE"
+		shim = external_data_user "SHIM"
+		ncras = external_data_user "NCRAS"
+		encore = external_data_user "ENCORE"
 		local_pas = softwareSystem "Local Patient Administration System (PAS)"
 		local_ris = softwareSystem "Local Radiology Information System (RIS)"
 		epr = softwareSystem "Electronic Patient Record (EPR)"
@@ -105,7 +107,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bcss -> fit_analyser
 		fit_analyser -> fit_middleware "bespoke REST API"
 		bcss -> ct_colonoscopy
-
 	}
 	
 	configuration {
@@ -113,8 +114,13 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 	}
 	
 	views {
+		systemLandscape digital_screening "All Systems Context" {
+			include *
+			autolayout lr
+		}
+		
 		systemContext nbss "NBSSSystemContext" {
-		 	include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims shim ncras encore static_unit_modalities local_pas local_ris
+			include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims shim ncras encore static_unit_modalities local_pas local_ris
 			
 		}
 		
@@ -131,7 +137,9 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			element "Screening Service" {
 				background #0099FF
 			}
-
+			element "External Data User" {
+				background #6c18ff
+			}
 		}
 	}
 }
