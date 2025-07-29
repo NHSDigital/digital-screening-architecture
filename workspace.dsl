@@ -20,16 +20,26 @@ workspace "Digital Screening" "All 6 pathway, currentxly" {
 		gpdc -> quicksilva
 		quicksilva -> des_screening_service
 		
-		// Breast Screening Pathway
+		// Common components
 
-		gpms = softwareSystem "GP Management Systems and Secondary Care"
-		pds = external_shared_component "Personal Demographics Service (PDS)"
-		pi = softwareSystem "PI"
+		gpms = softwareSystem "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
+		pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
+		pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
 		caas = external_shared_component "Cohorting as a Service (CAAS)"
 		cohort_manager = softwareSystem "Cohort Manager"
+		lims = softwareSystem "Lab Information Systems (LIMS)"
+		shim = softwareSystem "SHIM"
+		ncras = softwareSystem "NCRAS"
+		encore = softwareSystem "ENCORE"
+		local_pas = softwareSystem "Local Patient Administration System (PAS)"
+		local_ris = softwareSystem "Local Radiology Information System (RIS)"
+		epr = softwareSystem "Electronic Patient Record (EPR)"
+		rdi = softwareSystem "RDI"
+		
+		// Breast Screening Pathway specific systems
 		bs_select = softwareSystem "BS Select"
-		nbss = softwareSystem "National Breast Screening Service (NBSS)"
-		bsis = softwareSystem "Breast Screening Information Service (BSIS)"
+		nbss = screening_service "National Breast Screening Service (NBSS)"
+		bsis = screening_service "Breast Screening Information Service (BSIS)"
 		local_pacs = softwareSystem "Local Picture and Archiving System (PACS)"
 		group "Mobile Clinics" {
 			daybook = softwareSystem "Daybook"
@@ -37,12 +47,6 @@ workspace "Digital Screening" "All 6 pathway, currentxly" {
 			nbss_worklist_server = softwareSystem "NBSS Worklist Server"
 		}
 		static_unit_modalities = softwareSystem "Static Unit Modalities"
-		lims = softwareSystem "Lab Information Systems (LIMS)"
-		shim = softwareSystem "SHIM"
-		ncras = softwareSystem "NCRAS"
-		encore = softwareSystem "ENCORE"
-		local_pas = softwareSystem "Local Patient Administration System (PAS)"
-		local_ris = softwareSystem "Local Radiology Information System (RIS)"
 		
 		gpms -> pds "provide registrations and demographics"
 		pds -> pi "provide registrations and demographics"
@@ -81,10 +85,27 @@ workspace "Digital Screening" "All 6 pathway, currentxly" {
 		csms -> dps
 		
 		// Bowel Screening Pathway
-		bcss = softwareSystem "BCSS"
-		obiee = softwareSystem "OBIEE"
+		bcss = softwareSystem "Bowel Cancer Screening System (BCSS)"
+		bowel_obiee = softwareSystem "Bowel OBIEE"
+		fit_analyser = softwareSystem "FIT Analyser"
+		fit_middleware = softwareSystem "FIT Middleware"
+		group "Specialist Screening" {
+			ct_colonoscopy = softwareSystem "CT Colonoscopy"
+		}
+		bcss -> bowel_obiee "Magic ETL"
+		bcss -> encore
+		bcss -> ncras
+		bcss -> epr
+		epr -> bcss
+		bcss -> gpms "EDIFACT send outcome"
 		pi -> bcss
-		bcss -> obiee
+		bcss -> rdi
+		rdi -> fit_middleware
+		fit_middleware -> bcss "bespoke REST API"
+		bcss -> fit_analyser
+		fit_analyser -> fit_middleware "bespoke REST API"
+		bcss -> ct_colonoscopy
+
 	}
 	
 	configuration {
@@ -97,6 +118,9 @@ workspace "Digital Screening" "All 6 pathway, currentxly" {
 			
 		}
 		
+		systemContext bcss "BCSSSystemContext" {
+			include bcss epr gpms pds pi encore ncras bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
+		}
 		
 		theme default
 		
