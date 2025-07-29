@@ -1,4 +1,4 @@
-workspace "Digital Screening" "All 6 pathway, currentxly" {
+workspace "Digital Screening" "All 6 pathway, currently" {
 	
 	model {
 		archetypes {
