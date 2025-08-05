@@ -13,22 +13,19 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			}
 		}
 		
-		// Diabetic Eye Screening (DES) Pathway
-		gpes = external_shared_component "GPES"
-		gpdc = softwareSystem "GP Data Collector (GPDC)"
-		quicksilva = softwareSystem "Quicksilva"
 		
-		des_screening_service = screening_service "DES Screening Service"
-		gpes -> gpdc
-		gpdc -> quicksilva
-		quicksilva -> des_screening_service
 		
 		// Common components
-		gpms = softwareSystem "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
-		pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
-		pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
-		caas = external_shared_component "Cohorting as a Service (CAAS)"
-		cohort_manager = softwareSystem "Cohort Manager"
+		group "Particpant Identification" { 
+			gpes = external_shared_component "GPES"
+			gpms = softwareSystem "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
+			pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
+			pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
+			caas = external_shared_component "Cohorting as a Service (CAAS)"
+			cohort_manager = softwareSystem "Cohort Manager"
+			gp2drs = softwareSystem "GP2DRS"
+
+		}
 		lims = softwareSystem "Lab Information Systems (LIMS)"
 		shim = external_data_user "SHIM"
 		ncras = external_data_user "NCRAS"
@@ -107,6 +104,67 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bcss -> fit_analyser
 		fit_analyser -> fit_middleware "bespoke REST API"
 		bcss -> ct_colonoscopy
+		
+		// AAA Screening Pathway
+		smart = softwareSystem "SMaRT" "National system with 38 local providers to access it"
+		group "Outcome Analysis and Transfer" {
+			nvr = softwareSystem "National Vascular Registry"
+		}
+		group "Screening Test" {
+			aaascreeningdevice = softwareSystem "Screening Device"
+			aaaimagecube = softwareSystem "Image Cube"
+			aaaimageserver = softwareSystem "Image Server"
+		}
+		
+		group "Reporting" {
+			aaadatawarehouse = softwareSystem "Data Warehouse"
+			aaaqareporting = softwareSystem "QA Reporting"
+		}
+		
+		pi -> smart "Cohort of men due to reach 65 the following year"
+		smart -> nvr "Referral / Outcome"
+		smart -> aaaimagecube "Worklist file export"
+		aaaimagecube -> aaaimageserver "DICOM Images"
+		aaascreeningdevice -> aaaimagecube "DICOM Images"
+		aaaimagecube -> aaascreeningdevice "Worklist"
+		smart -> aaadatawarehouse
+		aaadatawarehouse -> aaaqareporting
+		
+		
+		
+		// DES Pathway
+		// Diabetic Eye Screening (DES) Pathway
+		group "New?" {
+			gpdc = softwareSystem "GP Data Collector (GPDC)"
+			des_screening_service = screening_service "DES Screening Service"
+			quicksilva = softwareSystem "Quicksilva"
+		}    
+		des = softwareSystem "DES (Optomize/Spectra)"
+		group "Screening Test" {
+			descamera = softwareSystem "Camera"
+			desimageviewer = softwareSystem "Image Viewer System"
+		}
+		group "Outcome Analysis and Transfer" {
+			hess = softwareSystem "Hospital Eye Service System"
+		}
+		group "Reporting" { 
+			marvin = softwareSystem "Marvin QA Tool"
+		}
+		
+		des -> marvin		
+		gpms -> gpes "MESH"
+		gpes -> gp2drs "MESH"
+		gpes -> gpdc
+		gp2drs -> des "Manual download of cohort file"
+		descamera -> des
+		des -> descamera
+		des -> desimageviewer
+		hess -> des "Outcome"
+		des -> hess "Referral"
+		gpdc -> quicksilva
+		quicksilva -> des_screening_service
+			
+		
 	}
 	
 	configuration {
@@ -126,6 +184,14 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		
 		systemContext bcss "BCSSSystemContext" {
 			include bcss epr gpms pds pi encore ncras bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
+		}
+		
+		systemContext smart "AAASystemContext" {
+			include gpms pds pi smart nvr aaaimagecube aaascreeningdevice aaaimageserver aaadatawarehouse aaaqareporting
+		}
+		
+		systemContext des "DESSystemContext" {
+			include des gpms gpes gp2drs descamera desimageviewer hess marvin gpdc des_screening_service quicksilva
 		}
 		
 		theme default
