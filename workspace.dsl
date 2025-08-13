@@ -15,27 +15,19 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		
 		
 		
-		// Common components
-		group "Particpant Identification" { 
-			gpes = external_shared_component "GPES"
-			gpms = softwareSystem "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
-			pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
-			pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
-			caas = external_shared_component "Cohorting as a Service (CAAS)"
-			cohort_manager = softwareSystem "Cohort Manager"
-			gp2drs = softwareSystem "GP2DRS"
-
-		}
+		gpes = external_shared_component "GPES"
+		gpms = external_shared_component "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
+		pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
+		pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
+		caas = external_shared_component "Cohorting as a Service (CAAS)"
+		gp2drs = softwareSystem "GP2DRS"
+		
 		lims = softwareSystem "Lab Information Systems (LIMS)"
-		shim = external_data_user "SHIM"
-		ncras = external_data_user "NCRAS"
-		encore = external_data_user "ENCORE"
-		local_pas = softwareSystem "Local Patient Administration System (PAS)"
-		local_ris = softwareSystem "Local Radiology Information System (RIS)"
 		epr = softwareSystem "Electronic Patient Record (EPR)"
 		rdi = softwareSystem "RDI"
 		
 		// Breast Screening Pathway specific systems
+		cohort_manager = softwareSystem "Cohort Manager"
 		bs_select = softwareSystem "BS Select"
 		nbss = screening_service "National Breast Screening Service (NBSS)"
 		bsis = screening_service "Breast Screening Information Service (BSIS)"
@@ -47,7 +39,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		static_unit_modalities = softwareSystem "Static Unit Modalities"
 		
-		gpms -> pds "provide registrations and demographics"
 		pds -> pi "provide registrations and demographics"
 		pi -> bs_select "perform dq check, send demographic updates"
 		
@@ -58,7 +49,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		
 		pds -> caas
 		caas -> cohort_manager
-		cohort_manager -> nbss
+		cohort_manager -> bs_select
 		nbss -> bsis "KC62 as CSV upload"
 		nbss_worklist_server -> modality "appointments loaded from a USB stick onto a laptop in vans"
 		nbss -> local_pacs "send patient updates and scheduled procedures"
@@ -68,20 +59,13 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		daybook -> nbss "import attendees from vans"
 		modality -> local_pacs "push images"
 		lims -> nbss "outcomes from labs"
-		nbss -> shim "screening data"
-		shim -> nbss "result data; categorisation for outcomes with cancer diagnosis"
-		shim -> encore "combines data for cancer registration"
-		shim -> ncras "combines data for cancer registration"
-		local_pas -> local_ris "provide demographics"
 		
 		// Cervical Screening Pathway
 		csms = softwareSystem "CSMS"
 		cervical_home_testing = softwareSystem "Cervical Home Testing"
-		dps = softwareSystem "DPS"
 		pds -> csms
 		csms -> cervical_home_testing
 		cervical_home_testing -> csms
-		csms -> dps
 		
 		// Bowel Screening Pathway
 		bcss = softwareSystem "Bowel Cancer Screening System (BCSS)"
@@ -92,9 +76,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			ct_colonoscopy = softwareSystem "CT Colonoscopy"
 		}
 		bcss -> bowel_obiee "Magic ETL"
-		bcss -> encore
-		bcss -> ncras
-		bcss -> epr
 		epr -> bcss
 		bcss -> gpms "EDIFACT send outcome"
 		pi -> bcss
@@ -106,65 +87,30 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bcss -> ct_colonoscopy
 		
 		// AAA Screening Pathway
-		smart = softwareSystem "SMaRT" "National system with 38 local providers to access it"
-		group "Outcome Analysis and Transfer" {
-			nvr = softwareSystem "National Vascular Registry"
-		}
-		group "Screening Test" {
-			aaascreeningdevice = softwareSystem "Screening Device"
-			aaaimagecube = softwareSystem "Image Cube"
-			aaaimageserver = softwareSystem "Image Server"
-		}
+		aaa = screening_service "SMaRT" "Outsourced national system with 38 local providers to access it"
 		
 		group "Reporting" {
 			aaadatawarehouse = softwareSystem "Data Warehouse"
 			aaaqareporting = softwareSystem "QA Reporting"
 		}
 		
-		pi -> smart "Cohort of men due to reach 65 the following year"
-		smart -> nvr "Referral / Outcome"
-		smart -> aaaimagecube "Worklist file export"
-		aaaimagecube -> aaaimageserver "DICOM Images"
-		aaascreeningdevice -> aaaimagecube "DICOM Images"
-		aaaimagecube -> aaascreeningdevice "Worklist"
-		smart -> aaadatawarehouse
+		pi -> aaa "Cohort of men due to reach 65 the following year"
+		aaa -> aaadatawarehouse
 		aaadatawarehouse -> aaaqareporting
 		
 		
 		
 		// DES Pathway
 		// Diabetic Eye Screening (DES) Pathway
-		group "New?" {
-			gpdc = softwareSystem "GP Data Collector (GPDC)"
-			des_screening_service = screening_service "DES Screening Service"
-			quicksilva = softwareSystem "Quicksilva"
-		}    
+		gpdc = softwareSystem "GP Data Collector (GPDC)"
+		des_screening_service = screening_service "DES Screening Service"
+		quicksilva = softwareSystem "Quicksilva"
 		des = softwareSystem "DES (Optomize/Spectra)"
-		group "Screening Test" {
-			descamera = softwareSystem "Camera"
-			desimageviewer = softwareSystem "Image Viewer System"
-		}
-		group "Outcome Analysis and Transfer" {
-			hess = softwareSystem "Hospital Eye Service System"
-		}
-		group "Reporting" { 
-			marvin = softwareSystem "Marvin QA Tool"
-		}
 		
-		des -> marvin		
-		gpms -> gpes "MESH"
-		gpes -> gp2drs "MESH"
 		gpes -> gpdc
 		gp2drs -> des "Manual download of cohort file"
-		descamera -> des
-		des -> descamera
-		des -> desimageviewer
-		hess -> des "Outcome"
-		des -> hess "Referral"
 		gpdc -> quicksilva
 		quicksilva -> des_screening_service
-			
-		
 	}
 	
 	configuration {
@@ -178,20 +124,18 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext nbss "NBSSSystemContext" {
-			include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims shim ncras encore static_unit_modalities local_pas local_ris
+			include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims static_unit_modalities
 			
 		}
 		
 		systemContext bcss "BCSSSystemContext" {
-			include bcss epr gpms pds pi encore ncras bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
+			include bcss epr gpms pds pi bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
 		}
-		
-		systemContext smart "AAASystemContext" {
-			include gpms pds pi smart nvr aaaimagecube aaascreeningdevice aaaimageserver aaadatawarehouse aaaqareporting
+		systemContext aaa "AAASystemContext" {
+			include aaa pi aaadatawarehouse aaaqareporting
 		}
-		
 		systemContext des "DESSystemContext" {
-			include des gpms gpes gp2drs descamera desimageviewer hess marvin gpdc des_screening_service quicksilva
+			include des gpms gpes gp2drs gpdc des_screening_service quicksilva
 		}
 		
 		theme default
