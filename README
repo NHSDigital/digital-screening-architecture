@@ -1,0 +1,21 @@
+This is a high level diagram of all of the software systems that the Digital Screening programme is responsible for, and some of the external systems that those systems interact with.
+
+This is using [Structurizr](https://structurizr.com/) DSL.
+
+Setup:
+
+```
+docker pull structurizr/lite
+```
+
+Run:
+
+```
+docker run -it --rm -p 8080:8080 -v .:/usr/local/structurizr structurizr/lite
+```
+
+Visit http://localhost:8080
+
+Contributing:
+
+Please contibute with a PR. You will need to manually update the workspace.svg image by downloading it from the structurizr lite web interface.
