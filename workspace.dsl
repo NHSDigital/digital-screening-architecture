@@ -100,16 +100,15 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		
 		
 		
-		// DES Pathway
 		// Diabetic Eye Screening (DES) Pathway
-		gpdc = softwareSystem "GP Data Collector (GPDC)"
-		des_screening_service = screening_service "DES Screening Service"
+		hic = softwareSystem "HIC"
 		quicksilva = softwareSystem "Quicksilva"
-		des = softwareSystem "DES (Optomize/Spectra)"
+		des_screening_service = screening_service "DES Screening Service"
 		
-		gpes -> gpdc
-		gp2drs -> des "Manual download of cohort file"
-		gpdc -> quicksilva
+		gpms -> gpes
+		gpes -> gp2drs
+		gp2drs -> hic
+		hic -> quicksilva
 		quicksilva -> des_screening_service
 	}
 	
@@ -134,8 +133,8 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		systemContext aaa "AAASystemContext" {
 			include aaa pi aaadatawarehouse aaaqareporting
 		}
-		systemContext des "DESSystemContext" {
-			include des gpms gpes gp2drs gpdc des_screening_service quicksilva
+		systemContext des_screening_service "DESSystemContext" {
+			include gpms gpes gp2drs hic des_screening_service quicksilva
 		}
 		
 		theme default
