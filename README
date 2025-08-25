@@ -16,10 +16,22 @@ Build static site:
 make build
 ```
 
-Run local server
+Run local server:
 
 ```
 make serve
+```
+
+Watch for changes and auto-rebuild:
+
+```
+make watch
+```
+
+Watch for changes and serve (combined):
+
+```
+make watch_and_serve
 ```
 
 Visit http://localhost:8080
