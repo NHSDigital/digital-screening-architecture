@@ -122,21 +122,20 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			autolayout lr
 		}
 		
-		systemContext nbss "NBSSSystemContext" {
+		systemContext nbss "Breast_Screening" {
 			include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims static_unit_modalities
-			
 			autolayout lr
 		}
 		
-		systemContext bcss "BCSSSystemContext" {
+		systemContext bcss "Bowel_Screening" {
 			include bcss epr gpms pds pi bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
 			autolayout lr
 		}
-		systemContext aaa "AAASystemContext" {
+		systemContext aaa "AAA_Screening" {
 			include aaa pi aaadatawarehouse aaaqareporting
 			autolayout lr
 		}
-		systemContext des_screening_service "DESSystemContext" {
+		systemContext des_screening_service "Diabetic_Eye_Screening" {
 			include gpms gpes gp2drs hic des_screening_service quicksilva
 			autolayout lr
 		}
