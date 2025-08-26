@@ -31,34 +31,34 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bs_select = softwareSystem "BS Select"
 		nbss = screening_service "National Breast Screening Service (NBSS)"
 		bsis = screening_service "Breast Screening Information Service (BSIS)"
+		iuvo = softwareSystem "Iuvo"
 		local_pacs = softwareSystem "Local Picture and Archiving System (PACS)"
-		group "Mobile Clinics" {
-			daybook = softwareSystem "Daybook"
-			modality = softwareSystem "Modality"
-			nbss_worklist_server = softwareSystem "NBSS Worklist Server"
+		// BARD is going to be replace by National Disease Registration Service (NDRS) (resusable component)
+		bard = softwareSystem "Breastscreening Active Radiotherapy Dataset" {
+			tag "External System"
 		}
-		static_unit_modalities = softwareSystem "Static Unit Modalities"
+		modality = softwareSystem "Imaging Modality (MRI, Mammography, Ultrasound)"
 		
 		pds -> pi "provide registrations and demographics"
 		pi -> bs_select "perform dq check, send demographic updates"
+		bard -> nbss "manual request for adding people to cohort"
 		
-		bs_select -> nbss "send registration changes, select eligible persons for invitation, send registration changes"
-		nbss -> bs_select "send screening episode outcomes"
+		bs_select -> iuvo "cohort"
+		iuvo -> nbss "send screening episode outcomes"
+		nbss -> bs_select "send screening episode outcomes (MESH)"
+		bs_select -> nbss "manual entry of round plan"
 		nbss -> gpms "send screening results (letter)"
 		bs_select -> bsis "data services: KC63"
 		
 		pds -> caas
 		caas -> cohort_manager
 		cohort_manager -> bs_select
-		nbss -> bsis "KC62 as CSV upload"
-		nbss_worklist_server -> modality "appointments loaded from a USB stick onto a laptop in vans"
-		nbss -> local_pacs "send patient updates and scheduled procedures"
-		local_pacs -> nbss "procedure updates"
-		local_pacs -> modality "provide worklist"
-		local_pacs -> static_unit_modalities "provide worklist"
-		daybook -> nbss "import attendees from vans"
+		nbss -> bsis "KC62 as manual CSV upload"
+		// TODO: explore how NBSS inteacts with PACS machine
+		nbss -> local_pacs
+		local_pacs -> nbss
 		modality -> local_pacs "push images"
-		lims -> nbss "outcomes from labs"
+		lims -> nbss "manual entry"
 		
 		// Cervical Screening Pathway
 		csms = softwareSystem "CSMS"
@@ -123,7 +123,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext nbss "Breast_Screening" {
-			include nbss bsis bs_select cohort_manager caas pi pds daybook modality nbss_worklist_server local_pacs gpms lims static_unit_modalities
+			include nbss bsis bs_select cohort_manager caas pi pds modality local_pacs gpms lims bard iuvo
 			autolayout lr
 		}
 		
