@@ -16,11 +16,11 @@
       },
       "relationships" : [ {
         "destinationId" : "6",
-        "id" : "65",
+        "id" : "61",
         "sourceId" : "1",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,External Shared Component"
+      "tags" : "Element,Software System,NHS England Shared Component"
     }, {
       "description" : "Provides Registration & demographic feed",
       "documentation" : { },
@@ -32,11 +32,11 @@
       },
       "relationships" : [ {
         "destinationId" : "1",
-        "id" : "64",
+        "id" : "60",
         "sourceId" : "2",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,External Shared Component"
+      "tags" : "Element,Software System,External System"
     }, {
       "description" : "Provides Demographics feed, Management of cohort, Identify criteria SDRS",
       "documentation" : { },
@@ -49,21 +49,21 @@
       "relationships" : [ {
         "description" : "provide registrations and demographics",
         "destinationId" : "4",
-        "id" : "18",
+        "id" : "16",
         "sourceId" : "3",
         "tags" : "Relationship"
       }, {
         "destinationId" : "5",
-        "id" : "27",
+        "id" : "25",
         "sourceId" : "3",
         "tags" : "Relationship"
       }, {
-        "destinationId" : "35",
-        "id" : "37",
+        "destinationId" : "33",
+        "id" : "35",
         "sourceId" : "3",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,External Shared Component"
+      "tags" : "Element,Software System,NHS England Shared Component"
     }, {
       "description" : "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts",
       "documentation" : { },
@@ -75,23 +75,23 @@
       },
       "relationships" : [ {
         "description" : "perform dq check, send demographic updates",
-        "destinationId" : "11",
-        "id" : "19",
+        "destinationId" : "8",
+        "id" : "17",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
-        "destinationId" : "40",
+        "destinationId" : "38",
         "id" : "48",
         "sourceId" : "4",
         "tags" : "Relationship"
       }, {
         "description" : "Cohort of men due to reach 65 the following year",
         "destinationId" : "55",
-        "id" : "58",
+        "id" : "56",
         "sourceId" : "4",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
       "id" : "5",
@@ -101,12 +101,12 @@
         "structurizr.dsl.identifier" : "caas"
       },
       "relationships" : [ {
-        "destinationId" : "10",
-        "id" : "28",
+        "destinationId" : "7",
+        "id" : "26",
         "sourceId" : "5",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,External Shared Component"
+      "tags" : "Element,Software System,NHS England Shared Component"
     }, {
       "documentation" : { },
       "id" : "6",
@@ -116,76 +116,30 @@
         "structurizr.dsl.identifier" : "gp2drs"
       },
       "relationships" : [ {
-        "destinationId" : "61",
-        "id" : "66",
+        "destinationId" : "57",
+        "id" : "62",
         "sourceId" : "6",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
       "id" : "7",
-      "location" : "Unspecified",
-      "name" : "Lab Information Systems (LIMS)",
-      "properties" : {
-        "structurizr.dsl.identifier" : "lims"
-      },
-      "relationships" : [ {
-        "description" : "manual entry",
-        "destinationId" : "12",
-        "id" : "34",
-        "sourceId" : "7",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "8",
-      "location" : "Unspecified",
-      "name" : "Electronic Patient Record (EPR)",
-      "properties" : {
-        "structurizr.dsl.identifier" : "epr"
-      },
-      "relationships" : [ {
-        "destinationId" : "40",
-        "id" : "46",
-        "sourceId" : "8",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "9",
-      "location" : "Unspecified",
-      "name" : "RDI",
-      "properties" : {
-        "structurizr.dsl.identifier" : "rdi"
-      },
-      "relationships" : [ {
-        "destinationId" : "43",
-        "id" : "50",
-        "sourceId" : "9",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "10",
       "location" : "Unspecified",
       "name" : "Cohort Manager",
       "properties" : {
         "structurizr.dsl.identifier" : "cohort_manager"
       },
       "relationships" : [ {
-        "destinationId" : "11",
-        "id" : "29",
-        "sourceId" : "10",
+        "destinationId" : "8",
+        "id" : "27",
+        "sourceId" : "7",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,Future"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "11",
+      "id" : "8",
       "location" : "Unspecified",
       "name" : "BS Select",
       "properties" : {
@@ -193,27 +147,27 @@
       },
       "relationships" : [ {
         "description" : "cohort",
-        "destinationId" : "14",
-        "id" : "21",
-        "sourceId" : "11",
+        "destinationId" : "11",
+        "id" : "19",
+        "sourceId" : "8",
         "tags" : "Relationship"
       }, {
         "description" : "manual entry of round plan",
-        "destinationId" : "12",
-        "id" : "24",
-        "sourceId" : "11",
+        "destinationId" : "9",
+        "id" : "22",
+        "sourceId" : "8",
         "tags" : "Relationship"
       }, {
         "description" : "data services: KC63",
-        "destinationId" : "13",
-        "id" : "26",
-        "sourceId" : "11",
+        "destinationId" : "10",
+        "id" : "24",
+        "sourceId" : "8",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "12",
+      "id" : "9",
       "location" : "Unspecified",
       "name" : "National Breast Screening Service (NBSS)",
       "properties" : {
@@ -221,41 +175,41 @@
       },
       "relationships" : [ {
         "description" : "send screening episode outcomes (MESH)",
-        "destinationId" : "11",
-        "id" : "23",
-        "sourceId" : "12",
+        "destinationId" : "8",
+        "id" : "21",
+        "sourceId" : "9",
         "tags" : "Relationship"
       }, {
         "description" : "send screening results (letter)",
         "destinationId" : "2",
-        "id" : "25",
-        "sourceId" : "12",
+        "id" : "23",
+        "sourceId" : "9",
         "tags" : "Relationship"
       }, {
         "description" : "KC62 as manual CSV upload",
-        "destinationId" : "13",
-        "id" : "30",
-        "sourceId" : "12",
+        "destinationId" : "10",
+        "id" : "28",
+        "sourceId" : "9",
         "tags" : "Relationship"
       }, {
-        "destinationId" : "15",
-        "id" : "31",
-        "sourceId" : "12",
+        "destinationId" : "12",
+        "id" : "29",
+        "sourceId" : "9",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System,Screening Service"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "13",
+      "id" : "10",
       "location" : "Unspecified",
       "name" : "Breast Screening Information Service (BSIS)",
       "properties" : {
         "structurizr.dsl.identifier" : "bsis"
       },
-      "tags" : "Element,Software System,Screening Service"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "14",
+      "id" : "11",
       "location" : "Unspecified",
       "name" : "Iuvo",
       "properties" : {
@@ -263,30 +217,30 @@
       },
       "relationships" : [ {
         "description" : "send screening episode outcomes",
-        "destinationId" : "12",
-        "id" : "22",
-        "sourceId" : "14",
+        "destinationId" : "9",
+        "id" : "20",
+        "sourceId" : "11",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Outsourced System"
     }, {
       "documentation" : { },
-      "id" : "15",
+      "id" : "12",
       "location" : "Unspecified",
       "name" : "Local Picture and Archiving System (PACS)",
       "properties" : {
         "structurizr.dsl.identifier" : "local_pacs"
       },
       "relationships" : [ {
-        "destinationId" : "12",
-        "id" : "32",
-        "sourceId" : "15",
+        "destinationId" : "9",
+        "id" : "30",
+        "sourceId" : "12",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,External System"
     }, {
       "documentation" : { },
-      "id" : "16",
+      "id" : "13",
       "location" : "Unspecified",
       "name" : "Breastscreening Active Radiotherapy Dataset",
       "properties" : {
@@ -294,15 +248,15 @@
       },
       "relationships" : [ {
         "description" : "manual request for adding people to cohort",
-        "destinationId" : "12",
-        "id" : "20",
-        "sourceId" : "16",
+        "destinationId" : "9",
+        "id" : "18",
+        "sourceId" : "13",
         "tags" : "Relationship"
       } ],
       "tags" : "Element,Software System,External System"
     }, {
       "documentation" : { },
-      "id" : "17",
+      "id" : "14",
       "location" : "Unspecified",
       "name" : "Imaging Modality (MRI, Mammography, Ultrasound)",
       "properties" : {
@@ -310,45 +264,61 @@
       },
       "relationships" : [ {
         "description" : "push images",
-        "destinationId" : "15",
-        "id" : "33",
-        "sourceId" : "17",
+        "destinationId" : "12",
+        "id" : "31",
+        "sourceId" : "14",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,External System"
     }, {
       "documentation" : { },
-      "id" : "35",
+      "id" : "15",
+      "location" : "Unspecified",
+      "name" : "Lab Information Systems (LIMS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "lims"
+      },
+      "relationships" : [ {
+        "description" : "manual entry",
+        "destinationId" : "9",
+        "id" : "32",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "33",
       "location" : "Unspecified",
       "name" : "CSMS",
       "properties" : {
         "structurizr.dsl.identifier" : "csms"
       },
       "relationships" : [ {
-        "destinationId" : "36",
-        "id" : "38",
-        "sourceId" : "35",
+        "destinationId" : "34",
+        "id" : "36",
+        "sourceId" : "33",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "36",
+      "id" : "34",
       "location" : "Unspecified",
       "name" : "Cervical Home Testing",
       "properties" : {
         "structurizr.dsl.identifier" : "cervical_home_testing"
       },
       "relationships" : [ {
-        "destinationId" : "35",
-        "id" : "39",
-        "sourceId" : "36",
+        "destinationId" : "33",
+        "id" : "37",
+        "sourceId" : "34",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "40",
+      "id" : "38",
       "location" : "Unspecified",
       "name" : "Bowel Cancer Screening System (BCSS)",
       "properties" : {
@@ -356,45 +326,45 @@
       },
       "relationships" : [ {
         "description" : "Magic ETL",
-        "destinationId" : "41",
+        "destinationId" : "39",
         "id" : "45",
-        "sourceId" : "40",
+        "sourceId" : "38",
         "tags" : "Relationship"
       }, {
         "description" : "EDIFACT send outcome",
         "destinationId" : "2",
         "id" : "47",
-        "sourceId" : "40",
-        "tags" : "Relationship"
-      }, {
-        "destinationId" : "9",
-        "id" : "49",
-        "sourceId" : "40",
-        "tags" : "Relationship"
-      }, {
-        "destinationId" : "42",
-        "id" : "52",
-        "sourceId" : "40",
+        "sourceId" : "38",
         "tags" : "Relationship"
       }, {
         "destinationId" : "44",
+        "id" : "49",
+        "sourceId" : "38",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "40",
+        "id" : "52",
+        "sourceId" : "38",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "42",
         "id" : "54",
-        "sourceId" : "40",
+        "sourceId" : "38",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "41",
+      "id" : "39",
       "location" : "Unspecified",
       "name" : "Bowel OBIEE",
       "properties" : {
         "structurizr.dsl.identifier" : "bowel_obiee"
       },
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Digital Screening System"
     }, {
       "documentation" : { },
-      "id" : "42",
+      "id" : "40",
       "location" : "Unspecified",
       "name" : "FIT Analyser",
       "properties" : {
@@ -402,15 +372,15 @@
       },
       "relationships" : [ {
         "description" : "bespoke REST API",
-        "destinationId" : "43",
+        "destinationId" : "41",
         "id" : "53",
-        "sourceId" : "42",
+        "sourceId" : "40",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,External System"
     }, {
       "documentation" : { },
-      "id" : "43",
+      "id" : "41",
       "location" : "Unspecified",
       "name" : "FIT Middleware",
       "properties" : {
@@ -418,22 +388,52 @@
       },
       "relationships" : [ {
         "description" : "bespoke REST API",
-        "destinationId" : "40",
+        "destinationId" : "38",
         "id" : "51",
-        "sourceId" : "43",
+        "sourceId" : "41",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,External System"
     }, {
       "documentation" : { },
       "group" : "Specialist Screening",
-      "id" : "44",
+      "id" : "42",
       "location" : "Unspecified",
       "name" : "CT Colonoscopy",
       "properties" : {
         "structurizr.dsl.identifier" : "ct_colonoscopy"
       },
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "43",
+      "location" : "Unspecified",
+      "name" : "Electronic Patient Record (EPR)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "epr"
+      },
+      "relationships" : [ {
+        "destinationId" : "38",
+        "id" : "46",
+        "sourceId" : "43",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "44",
+      "location" : "Unspecified",
+      "name" : "RDI",
+      "properties" : {
+        "structurizr.dsl.identifier" : "rdi"
+      },
+      "relationships" : [ {
+        "destinationId" : "41",
+        "id" : "50",
+        "sourceId" : "44",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
     }, {
       "description" : "Outsourced national system with 38 local providers to access it",
       "documentation" : { },
@@ -443,97 +443,72 @@
       "properties" : {
         "structurizr.dsl.identifier" : "aaa"
       },
-      "relationships" : [ {
-        "destinationId" : "56",
-        "id" : "59",
-        "sourceId" : "55",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System,Screening Service"
+      "tags" : "Element,Software System,Outsourced System"
     }, {
       "documentation" : { },
-      "group" : "Reporting",
-      "id" : "56",
-      "location" : "Unspecified",
-      "name" : "Data Warehouse",
-      "properties" : {
-        "structurizr.dsl.identifier" : "aaadatawarehouse"
-      },
-      "relationships" : [ {
-        "destinationId" : "57",
-        "id" : "60",
-        "sourceId" : "56",
-        "tags" : "Relationship"
-      } ],
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "group" : "Reporting",
       "id" : "57",
-      "location" : "Unspecified",
-      "name" : "QA Reporting",
-      "properties" : {
-        "structurizr.dsl.identifier" : "aaaqareporting"
-      },
-      "tags" : "Element,Software System"
-    }, {
-      "documentation" : { },
-      "id" : "61",
       "location" : "Unspecified",
       "name" : "HIC",
       "properties" : {
         "structurizr.dsl.identifier" : "hic"
       },
       "relationships" : [ {
-        "destinationId" : "62",
-        "id" : "67",
-        "sourceId" : "61",
+        "destinationId" : "58",
+        "id" : "63",
+        "sourceId" : "57",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Outsourced System"
     }, {
       "documentation" : { },
-      "id" : "62",
+      "id" : "58",
       "location" : "Unspecified",
       "name" : "Quicksilva",
       "properties" : {
         "structurizr.dsl.identifier" : "quicksilva"
       },
       "relationships" : [ {
-        "destinationId" : "63",
-        "id" : "68",
-        "sourceId" : "62",
+        "destinationId" : "59",
+        "id" : "64",
+        "sourceId" : "58",
         "tags" : "Relationship"
       } ],
-      "tags" : "Element,Software System"
+      "tags" : "Element,Software System,Outsourced System"
     }, {
       "documentation" : { },
-      "id" : "63",
+      "id" : "59",
       "location" : "Unspecified",
       "name" : "DES Screening Service",
       "properties" : {
         "structurizr.dsl.identifier" : "des_screening_service"
       },
-      "tags" : "Element,Software System,Screening Service"
+      "tags" : "Element,Software System,Outsourced System"
     } ]
   },
   "name" : "Digital Screening",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlICJEaWdpdGFsIFNjcmVlbmluZyIgIkFsbCA2IHBhdGh3YXksIGN1cnJlbnRseSIgewoJCgltb2RlbCB7CgkJYXJjaGV0eXBlcyB7CgkJCXNjcmVlbmluZ19zZXJ2aWNlID0gc29mdHdhcmVTeXN0ZW0gIlNjcmVlbmluZyBTZXJ2aWNlIiB7CgkJCQl0YWcgIlNjcmVlbmluZyBTZXJ2aWNlIgoJCQl9CgkJCWV4dGVybmFsX3NoYXJlZF9jb21wb25lbnQgPSBzb2Z0d2FyZVN5c3RlbSAiRXh0ZXJuYWwgU2hhcmVkIENvbXBvbmVudCIgewoJCQkJdGFnICJFeHRlcm5hbCBTaGFyZWQgQ29tcG9uZW50IgoJCQl9CgkJCWV4dGVybmFsX2RhdGFfdXNlciA9IHNvZnR3YXJlU3lzdGVtICJFeHRlcm5hbCBEYXRhIFVzZXIiIHsKCQkJCXRhZyAiRXh0ZXJuYWwgRGF0YSBVc2VyIgoJCQl9CgkJfQoJCQoJCQoJCQoJCWdwZXMgPSBleHRlcm5hbF9zaGFyZWRfY29tcG9uZW50ICJHUEVTIgoJCWdwbXMgPSBleHRlcm5hbF9zaGFyZWRfY29tcG9uZW50ICJHUCBNYW5hZ2VtZW50IFN5c3RlbXMgYW5kIFNlY29uZGFyeSBDYXJlIiAiUHJvdmlkZXMgUmVnaXN0cmF0aW9uICYgZGVtb2dyYXBoaWMgZmVlZCIKCQlwZHMgPSBleHRlcm5hbF9zaGFyZWRfY29tcG9uZW50ICJQZXJzb25hbCBEZW1vZ3JhcGhpY3MgU2VydmljZSAoUERTKSIgIlByb3ZpZGVzIERlbW9ncmFwaGljcyBmZWVkLCBNYW5hZ2VtZW50IG9mIGNvaG9ydCwgSWRlbnRpZnkgY3JpdGVyaWEgU0RSUyIKCQlwaSA9IHNvZnR3YXJlU3lzdGVtICJQSSIgIkRhdGEgUXVhbGl0eSBDaGVja3MgJiBEZW1vZ2FyYXBoaWNzLCBBZ2dyZWdhdGlvbnMsIHN1cHBvcnQgYnkgYSBCdXJlYXUgdGVhbSBvZiBEUSBleHBlcnRzIgoJCWNhYXMgPSBleHRlcm5hbF9zaGFyZWRfY29tcG9uZW50ICJDb2hvcnRpbmcgYXMgYSBTZXJ2aWNlIChDQUFTKSIKCQlncDJkcnMgPSBzb2Z0d2FyZVN5c3RlbSAiR1AyRFJTIgoJCQoJCWxpbXMgPSBzb2Z0d2FyZVN5c3RlbSAiTGFiIEluZm9ybWF0aW9uIFN5c3RlbXMgKExJTVMpIgoJCWVwciA9IHNvZnR3YXJlU3lzdGVtICJFbGVjdHJvbmljIFBhdGllbnQgUmVjb3JkIChFUFIpIgoJCXJkaSA9IHNvZnR3YXJlU3lzdGVtICJSREkiCgkJCgkJLy8gQnJlYXN0IFNjcmVlbmluZyBQYXRod2F5IHNwZWNpZmljIHN5c3RlbXMKCQljb2hvcnRfbWFuYWdlciA9IHNvZnR3YXJlU3lzdGVtICJDb2hvcnQgTWFuYWdlciIgewoJCQl0YWcgIkZ1dHVyZSIKCQl9CgkJYnNfc2VsZWN0ID0gc29mdHdhcmVTeXN0ZW0gIkJTIFNlbGVjdCIKCQluYnNzID0gc2NyZWVuaW5nX3NlcnZpY2UgIk5hdGlvbmFsIEJyZWFzdCBTY3JlZW5pbmcgU2VydmljZSAoTkJTUykiCgkJYnNpcyA9IHNjcmVlbmluZ19zZXJ2aWNlICJCcmVhc3QgU2NyZWVuaW5nIEluZm9ybWF0aW9uIFNlcnZpY2UgKEJTSVMpIgoJCWl1dm8gPSBzb2Z0d2FyZVN5c3RlbSAiSXV2byIKCQlsb2NhbF9wYWNzID0gc29mdHdhcmVTeXN0ZW0gIkxvY2FsIFBpY3R1cmUgYW5kIEFyY2hpdmluZyBTeXN0ZW0gKFBBQ1MpIgoJCS8vIEJBUkQgaXMgZ29pbmcgdG8gYmUgcmVwbGFjZSBieSBOYXRpb25hbCBEaXNlYXNlIFJlZ2lzdHJhdGlvbiBTZXJ2aWNlIChORFJTKSAocmVzdXNhYmxlIGNvbXBvbmVudCkKCQliYXJkID0gc29mdHdhcmVTeXN0ZW0gIkJyZWFzdHNjcmVlbmluZyBBY3RpdmUgUmFkaW90aGVyYXB5IERhdGFzZXQiIHsKCQkJdGFnICJFeHRlcm5hbCBTeXN0ZW0iCgkJfQoJCW1vZGFsaXR5ID0gc29mdHdhcmVTeXN0ZW0gIkltYWdpbmcgTW9kYWxpdHkgKE1SSSwgTWFtbW9ncmFwaHksIFVsdHJhc291bmQpIgoJCQoJCXBkcyAtPiBwaSAicHJvdmlkZSByZWdpc3RyYXRpb25zIGFuZCBkZW1vZ3JhcGhpY3MiCgkJcGkgLT4gYnNfc2VsZWN0ICJwZXJmb3JtIGRxIGNoZWNrLCBzZW5kIGRlbW9ncmFwaGljIHVwZGF0ZXMiCgkJYmFyZCAtPiBuYnNzICJtYW51YWwgcmVxdWVzdCBmb3IgYWRkaW5nIHBlb3BsZSB0byBjb2hvcnQiCgkJCgkJYnNfc2VsZWN0IC0+IGl1dm8gImNvaG9ydCIKCQlpdXZvIC0+IG5ic3MgInNlbmQgc2NyZWVuaW5nIGVwaXNvZGUgb3V0Y29tZXMiCgkJbmJzcyAtPiBic19zZWxlY3QgInNlbmQgc2NyZWVuaW5nIGVwaXNvZGUgb3V0Y29tZXMgKE1FU0gpIgoJCWJzX3NlbGVjdCAtPiBuYnNzICJtYW51YWwgZW50cnkgb2Ygcm91bmQgcGxhbiIKCQluYnNzIC0+IGdwbXMgInNlbmQgc2NyZWVuaW5nIHJlc3VsdHMgKGxldHRlcikiCgkJYnNfc2VsZWN0IC0+IGJzaXMgImRhdGEgc2VydmljZXM6IEtDNjMiCgkJCgkJcGRzIC0+IGNhYXMKCQljYWFzIC0+IGNvaG9ydF9tYW5hZ2VyCgkJY29ob3J0X21hbmFnZXIgLT4gYnNfc2VsZWN0CgkJbmJzcyAtPiBic2lzICJLQzYyIGFzIG1hbnVhbCBDU1YgdXBsb2FkIgoJCS8vIFRPRE86IGV4cGxvcmUgaG93IE5CU1MgaW50ZWFjdHMgd2l0aCBQQUNTIG1hY2hpbmUKCQluYnNzIC0+IGxvY2FsX3BhY3MKCQlsb2NhbF9wYWNzIC0+IG5ic3MKCQltb2RhbGl0eSAtPiBsb2NhbF9wYWNzICJwdXNoIGltYWdlcyIKCQlsaW1zIC0+IG5ic3MgIm1hbnVhbCBlbnRyeSIKCQkKCQkvLyBDZXJ2aWNhbCBTY3JlZW5pbmcgUGF0aHdheQoJCWNzbXMgPSBzb2Z0d2FyZVN5c3RlbSAiQ1NNUyIKCQljZXJ2aWNhbF9ob21lX3Rlc3RpbmcgPSBzb2Z0d2FyZVN5c3RlbSAiQ2VydmljYWwgSG9tZSBUZXN0aW5nIgoJCXBkcyAtPiBjc21zCgkJY3NtcyAtPiBjZXJ2aWNhbF9ob21lX3Rlc3RpbmcKCQljZXJ2aWNhbF9ob21lX3Rlc3RpbmcgLT4gY3NtcwoJCQoJCS8vIEJvd2VsIFNjcmVlbmluZyBQYXRod2F5CgkJYmNzcyA9IHNvZnR3YXJlU3lzdGVtICJCb3dlbCBDYW5jZXIgU2NyZWVuaW5nIFN5c3RlbSAoQkNTUykiCgkJYm93ZWxfb2JpZWUgPSBzb2Z0d2FyZVN5c3RlbSAiQm93ZWwgT0JJRUUiCgkJZml0X2FuYWx5c2VyID0gc29mdHdhcmVTeXN0ZW0gIkZJVCBBbmFseXNlciIKCQlmaXRfbWlkZGxld2FyZSA9IHNvZnR3YXJlU3lzdGVtICJGSVQgTWlkZGxld2FyZSIKCQlncm91cCAiU3BlY2lhbGlzdCBTY3JlZW5pbmciIHsKCQkJY3RfY29sb25vc2NvcHkgPSBzb2Z0d2FyZVN5c3RlbSAiQ1QgQ29sb25vc2NvcHkiCgkJfQoJCWJjc3MgLT4gYm93ZWxfb2JpZWUgIk1hZ2ljIEVUTCIKCQllcHIgLT4gYmNzcwoJCWJjc3MgLT4gZ3BtcyAiRURJRkFDVCBzZW5kIG91dGNvbWUiCgkJcGkgLT4gYmNzcwoJCWJjc3MgLT4gcmRpCgkJcmRpIC0+IGZpdF9taWRkbGV3YXJlCgkJZml0X21pZGRsZXdhcmUgLT4gYmNzcyAiYmVzcG9rZSBSRVNUIEFQSSIKCQliY3NzIC0+IGZpdF9hbmFseXNlcgoJCWZpdF9hbmFseXNlciAtPiBmaXRfbWlkZGxld2FyZSAiYmVzcG9rZSBSRVNUIEFQSSIKCQliY3NzIC0+IGN0X2NvbG9ub3Njb3B5CgkJCgkJLy8gQUFBIFNjcmVlbmluZyBQYXRod2F5CgkJYWFhID0gc2NyZWVuaW5nX3NlcnZpY2UgIlNNYVJUIiAiT3V0c291cmNlZCBuYXRpb25hbCBzeXN0ZW0gd2l0aCAzOCBsb2NhbCBwcm92aWRlcnMgdG8gYWNjZXNzIGl0IgoJCQoJCWdyb3VwICJSZXBvcnRpbmciIHsKCQkJYWFhZGF0YXdhcmVob3VzZSA9IHNvZnR3YXJlU3lzdGVtICJEYXRhIFdhcmVob3VzZSIKCQkJYWFhcWFyZXBvcnRpbmcgPSBzb2Z0d2FyZVN5c3RlbSAiUUEgUmVwb3J0aW5nIgoJCX0KCQkKCQlwaSAtPiBhYWEgIkNvaG9ydCBvZiBtZW4gZHVlIHRvIHJlYWNoIDY1IHRoZSBmb2xsb3dpbmcgeWVhciIKCQlhYWEgLT4gYWFhZGF0YXdhcmVob3VzZQoJCWFhYWRhdGF3YXJlaG91c2UgLT4gYWFhcWFyZXBvcnRpbmcKCQkKCQkKCQkKCQkvLyBEaWFiZXRpYyBFeWUgU2NyZWVuaW5nIChERVMpIFBhdGh3YXkKCQloaWMgPSBzb2Z0d2FyZVN5c3RlbSAiSElDIgoJCXF1aWNrc2lsdmEgPSBzb2Z0d2FyZVN5c3RlbSAiUXVpY2tzaWx2YSIKCQlkZXNfc2NyZWVuaW5nX3NlcnZpY2UgPSBzY3JlZW5pbmdfc2VydmljZSAiREVTIFNjcmVlbmluZyBTZXJ2aWNlIgoJCQoJCWdwbXMgLT4gZ3BlcwoJCWdwZXMgLT4gZ3AyZHJzCgkJZ3AyZHJzIC0+IGhpYwoJCWhpYyAtPiBxdWlja3NpbHZhCgkJcXVpY2tzaWx2YSAtPiBkZXNfc2NyZWVuaW5nX3NlcnZpY2UKCX0KCQoJY29uZmlndXJhdGlvbiB7CgkJc2NvcGUgc29mdHdhcmVzeXN0ZW0KCX0KCQoJdmlld3MgewoJCXN5c3RlbUxhbmRzY2FwZSBkaWdpdGFsX3NjcmVlbmluZyAiQWxsIFN5c3RlbXMgQ29udGV4dCIgewoJCQlpbmNsdWRlICoKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQlzeXN0ZW1Db250ZXh0IG5ic3MgIkJyZWFzdF9TY3JlZW5pbmciIHsKCQkJaW5jbHVkZSBuYnNzIGJzaXMgYnNfc2VsZWN0IGNvaG9ydF9tYW5hZ2VyIGNhYXMgcGkgcGRzIG1vZGFsaXR5IGxvY2FsX3BhY3MgZ3BtcyBsaW1zIGJhcmQgaXV2bwoJCQlhdXRvbGF5b3V0IGxyCgkJfQoJCQoJCXN5c3RlbUNvbnRleHQgYmNzcyAiQm93ZWxfU2NyZWVuaW5nIiB7CgkJCWluY2x1ZGUgYmNzcyBlcHIgZ3BtcyBwZHMgcGkgYm93ZWxfb2JpZWUgZml0X2FuYWx5c2VyIGZpdF9taWRkbGV3YXJlIHJkaSBjdF9jb2xvbm9zY29weQoJCQlhdXRvbGF5b3V0IGxyCgkJfQoJCXN5c3RlbUNvbnRleHQgYWFhICJBQUFfU2NyZWVuaW5nIiB7CgkJCWluY2x1ZGUgYWFhIHBpIGFhYWRhdGF3YXJlaG91c2UgYWFhcWFyZXBvcnRpbmcKCQkJYXV0b2xheW91dCBscgoJCX0KCQlzeXN0ZW1Db250ZXh0IGRlc19zY3JlZW5pbmdfc2VydmljZSAiRGlhYmV0aWNfRXllX1NjcmVlbmluZyIgewoJCQlpbmNsdWRlIGdwbXMgZ3BlcyBncDJkcnMgaGljIGRlc19zY3JlZW5pbmdfc2VydmljZSBxdWlja3NpbHZhCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJCgkJdGhlbWUgZGVmYXVsdAoJCQoJCXN0eWxlcyB7CgkJCWVsZW1lbnQgIkV4dGVybmFsIFNoYXJlZCBDb21wb25lbnQiIHsKCQkJCWJhY2tncm91bmQgIzk5OTkwMAoJCQl9CgkJCWVsZW1lbnQgIlNjcmVlbmluZyBTZXJ2aWNlIiB7CgkJCQliYWNrZ3JvdW5kICMwMDk5RkYKCQkJfQoJCQllbGVtZW50ICJFeHRlcm5hbCBEYXRhIFVzZXIiIHsKCQkJCWJhY2tncm91bmQgIzZjMThmZgoJCQl9CgkJCWVsZW1lbnQgIkZ1dHVyZSIgewoJCQkJaWNvbiAiaHR0cHM6Ly91cGxvYWQud2lraW1lZGlhLm9yZy93aWtpcGVkaWEvY29tbW9ucy9lL2UxL0VvX2NpcmNsZV9ncmVlbl9hcnJvdy1yaWdodC5zdmciCgkJCX0KCQl9Cgl9CgkKCSMgVXNlIEdyYXBodml6IHRvIGF1dG9tYXRpY2FsbHkgbGF5b3V0IHRoZSBkaWFncmFtcwoJIyBodHRwczovL2dpdGh1Yi5jb20vc3RydWN0dXJpenIvamF2YS90cmVlL21hc3Rlci9zdHJ1Y3R1cml6ci1hdXRvbGF5b3V0Cgkhc2NyaXB0IGdyb292eSB7CgkJbmV3IGNvbS5zdHJ1Y3R1cml6ci5hdXRvbGF5b3V0LmdyYXBodml6LkdyYXBodml6QXV0b21hdGljTGF5b3V0KCkuYXBwbHkod29ya3NwYWNlKTsKCX0KfQ=="
+    "structurizr.dsl" : "d29ya3NwYWNlICJEaWdpdGFsIFNjcmVlbmluZyIgIkFsbCA2IHBhdGh3YXksIGN1cnJlbnRseSIgewoJCgltb2RlbCB7CgkJYXJjaGV0eXBlcyB7CgkJCW5oc19zaGFyZWRfY29tcG9uZW50ID0gc29mdHdhcmVTeXN0ZW0gIk5IUyBFbmdsYW5kIFNoYXJlZCBDb21wb25lbnQiIHsKCQkJCXRhZyAiTkhTIEVuZ2xhbmQgU2hhcmVkIENvbXBvbmVudCIKCQkJfQoJCQlleHRlcm5hbF9zeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiRXh0ZXJuYWwgU3lzdGVtIiB7CgkJCQl0YWcgIkV4dGVybmFsIFN5c3RlbSIKCQkJfQoJCQlvdXRzb3VyY2VkX3N5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJPdXRzb3VyY2VkIFN5c3RlbSIgewoJCQkJdGFnICJPdXRzb3VyY2VkIFN5c3RlbSIKCQkJfQoJCQlkaWdpdGFsX3NjcmVlbmluZ19zeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiRGlnaXRhbCBTY3JlZW5pbmcgU3lzdGVtIiB7CgkJCQl0YWcgIkRpZ2l0YWwgU2NyZWVuaW5nIFN5c3RlbSIKCQkJfQoJCX0KCQkKCQkKCQkKCQlncGVzID0gbmhzX3NoYXJlZF9jb21wb25lbnQgIkdQRVMiCgkJZ3BtcyA9IGV4dGVybmFsX3N5c3RlbSAiR1AgTWFuYWdlbWVudCBTeXN0ZW1zIGFuZCBTZWNvbmRhcnkgQ2FyZSIgIlByb3ZpZGVzIFJlZ2lzdHJhdGlvbiAmIGRlbW9ncmFwaGljIGZlZWQiCgkJcGRzID0gbmhzX3NoYXJlZF9jb21wb25lbnQgIlBlcnNvbmFsIERlbW9ncmFwaGljcyBTZXJ2aWNlIChQRFMpIiAiUHJvdmlkZXMgRGVtb2dyYXBoaWNzIGZlZWQsIE1hbmFnZW1lbnQgb2YgY29ob3J0LCBJZGVudGlmeSBjcml0ZXJpYSBTRFJTIgoJCXBpID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJQSSIgIkRhdGEgUXVhbGl0eSBDaGVja3MgJiBEZW1vZ2FyYXBoaWNzLCBBZ2dyZWdhdGlvbnMsIHN1cHBvcnQgYnkgYSBCdXJlYXUgdGVhbSBvZiBEUSBleHBlcnRzIgoJCWNhYXMgPSBuaHNfc2hhcmVkX2NvbXBvbmVudCAiQ29ob3J0aW5nIGFzIGEgU2VydmljZSAoQ0FBUykiCgkJZ3AyZHJzID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJHUDJEUlMiCgkJCgkJLy8gQnJlYXN0IFNjcmVlbmluZyBQYXRod2F5IHNwZWNpZmljIHN5c3RlbXMKCQljb2hvcnRfbWFuYWdlciA9IGRpZ2l0YWxfc2NyZWVuaW5nX3N5c3RlbSAiQ29ob3J0IE1hbmFnZXIiCgkJYnNfc2VsZWN0ID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJCUyBTZWxlY3QiCgkJbmJzcyA9IGRpZ2l0YWxfc2NyZWVuaW5nX3N5c3RlbSAiTmF0aW9uYWwgQnJlYXN0IFNjcmVlbmluZyBTZXJ2aWNlIChOQlNTKSIKCQlic2lzID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJCcmVhc3QgU2NyZWVuaW5nIEluZm9ybWF0aW9uIFNlcnZpY2UgKEJTSVMpIgoJCWl1dm8gPSBvdXRzb3VyY2VkX3N5c3RlbSAiSXV2byIKCQlsb2NhbF9wYWNzID0gZXh0ZXJuYWxfc3lzdGVtICJMb2NhbCBQaWN0dXJlIGFuZCBBcmNoaXZpbmcgU3lzdGVtIChQQUNTKSIKCQkvLyBCQVJEIGlzIGdvaW5nIHRvIGJlIHJlcGxhY2UgYnkgTmF0aW9uYWwgRGlzZWFzZSBSZWdpc3RyYXRpb24gU2VydmljZSAoTkRSUykgKHJlc3VzYWJsZSBjb21wb25lbnQpCgkJYmFyZCA9IGV4dGVybmFsX3N5c3RlbSAiQnJlYXN0c2NyZWVuaW5nIEFjdGl2ZSBSYWRpb3RoZXJhcHkgRGF0YXNldCIKCQltb2RhbGl0eSA9IGV4dGVybmFsX3N5c3RlbSAiSW1hZ2luZyBNb2RhbGl0eSAoTVJJLCBNYW1tb2dyYXBoeSwgVWx0cmFzb3VuZCkiCgkJbGltcyA9IGV4dGVybmFsX3N5c3RlbSAiTGFiIEluZm9ybWF0aW9uIFN5c3RlbXMgKExJTVMpIgoJCQoJCXBkcyAtPiBwaSAicHJvdmlkZSByZWdpc3RyYXRpb25zIGFuZCBkZW1vZ3JhcGhpY3MiCgkJcGkgLT4gYnNfc2VsZWN0ICJwZXJmb3JtIGRxIGNoZWNrLCBzZW5kIGRlbW9ncmFwaGljIHVwZGF0ZXMiCgkJYmFyZCAtPiBuYnNzICJtYW51YWwgcmVxdWVzdCBmb3IgYWRkaW5nIHBlb3BsZSB0byBjb2hvcnQiCgkJCgkJYnNfc2VsZWN0IC0+IGl1dm8gImNvaG9ydCIKCQlpdXZvIC0+IG5ic3MgInNlbmQgc2NyZWVuaW5nIGVwaXNvZGUgb3V0Y29tZXMiCgkJbmJzcyAtPiBic19zZWxlY3QgInNlbmQgc2NyZWVuaW5nIGVwaXNvZGUgb3V0Y29tZXMgKE1FU0gpIgoJCWJzX3NlbGVjdCAtPiBuYnNzICJtYW51YWwgZW50cnkgb2Ygcm91bmQgcGxhbiIKCQluYnNzIC0+IGdwbXMgInNlbmQgc2NyZWVuaW5nIHJlc3VsdHMgKGxldHRlcikiCgkJYnNfc2VsZWN0IC0+IGJzaXMgImRhdGEgc2VydmljZXM6IEtDNjMiCgkJCgkJcGRzIC0+IGNhYXMKCQljYWFzIC0+IGNvaG9ydF9tYW5hZ2VyCgkJY29ob3J0X21hbmFnZXIgLT4gYnNfc2VsZWN0CgkJbmJzcyAtPiBic2lzICJLQzYyIGFzIG1hbnVhbCBDU1YgdXBsb2FkIgoJCS8vIFRPRE86IGV4cGxvcmUgaG93IE5CU1MgaW50ZWFjdHMgd2l0aCBQQUNTIG1hY2hpbmUKCQluYnNzIC0+IGxvY2FsX3BhY3MKCQlsb2NhbF9wYWNzIC0+IG5ic3MKCQltb2RhbGl0eSAtPiBsb2NhbF9wYWNzICJwdXNoIGltYWdlcyIKCQlsaW1zIC0+IG5ic3MgIm1hbnVhbCBlbnRyeSIKCQkKCQkvLyBDZXJ2aWNhbCBTY3JlZW5pbmcgUGF0aHdheQoJCWNzbXMgPSBkaWdpdGFsX3NjcmVlbmluZ19zeXN0ZW0gIkNTTVMiCgkJY2VydmljYWxfaG9tZV90ZXN0aW5nID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJDZXJ2aWNhbCBIb21lIFRlc3RpbmciCgkJcGRzIC0+IGNzbXMKCQljc21zIC0+IGNlcnZpY2FsX2hvbWVfdGVzdGluZwoJCWNlcnZpY2FsX2hvbWVfdGVzdGluZyAtPiBjc21zCgkJCgkJLy8gQm93ZWwgU2NyZWVuaW5nIFBhdGh3YXkKCQliY3NzID0gZGlnaXRhbF9zY3JlZW5pbmdfc3lzdGVtICJCb3dlbCBDYW5jZXIgU2NyZWVuaW5nIFN5c3RlbSAoQkNTUykiCgkJYm93ZWxfb2JpZWUgPSBkaWdpdGFsX3NjcmVlbmluZ19zeXN0ZW0gIkJvd2VsIE9CSUVFIgoJCWZpdF9hbmFseXNlciA9IGV4dGVybmFsX3N5c3RlbSAiRklUIEFuYWx5c2VyIgoJCWZpdF9taWRkbGV3YXJlID0gZXh0ZXJuYWxfc3lzdGVtICJGSVQgTWlkZGxld2FyZSIKCQlncm91cCAiU3BlY2lhbGlzdCBTY3JlZW5pbmciIHsKCQkJY3RfY29sb25vc2NvcHkgPSBleHRlcm5hbF9zeXN0ZW0gIkNUIENvbG9ub3Njb3B5IgoJCX0KCQllcHIgPSBleHRlcm5hbF9zeXN0ZW0gIkVsZWN0cm9uaWMgUGF0aWVudCBSZWNvcmQgKEVQUikiCgkJcmRpID0gZXh0ZXJuYWxfc3lzdGVtICJSREkiCgkJCgkJYmNzcyAtPiBib3dlbF9vYmllZSAiTWFnaWMgRVRMIgoJCWVwciAtPiBiY3NzCgkJYmNzcyAtPiBncG1zICJFRElGQUNUIHNlbmQgb3V0Y29tZSIKCQlwaSAtPiBiY3NzCgkJYmNzcyAtPiByZGkKCQlyZGkgLT4gZml0X21pZGRsZXdhcmUKCQlmaXRfbWlkZGxld2FyZSAtPiBiY3NzICJiZXNwb2tlIFJFU1QgQVBJIgoJCWJjc3MgLT4gZml0X2FuYWx5c2VyCgkJZml0X2FuYWx5c2VyIC0+IGZpdF9taWRkbGV3YXJlICJiZXNwb2tlIFJFU1QgQVBJIgoJCWJjc3MgLT4gY3RfY29sb25vc2NvcHkKCQkKCQkvLyBBQUEgU2NyZWVuaW5nIFBhdGh3YXkKCQlhYWEgPSBvdXRzb3VyY2VkX3N5c3RlbSAiU01hUlQiICJPdXRzb3VyY2VkIG5hdGlvbmFsIHN5c3RlbSB3aXRoIDM4IGxvY2FsIHByb3ZpZGVycyB0byBhY2Nlc3MgaXQiCgkJCgkJcGkgLT4gYWFhICJDb2hvcnQgb2YgbWVuIGR1ZSB0byByZWFjaCA2NSB0aGUgZm9sbG93aW5nIHllYXIiCgkJCgkJLy8gRGlhYmV0aWMgRXllIFNjcmVlbmluZyAoREVTKSBQYXRod2F5CgkJaGljID0gb3V0c291cmNlZF9zeXN0ZW0gIkhJQyIKCQlxdWlja3NpbHZhID0gb3V0c291cmNlZF9zeXN0ZW0gIlF1aWNrc2lsdmEiCgkJZGVzX3NjcmVlbmluZ19zZXJ2aWNlID0gb3V0c291cmNlZF9zeXN0ZW0gIkRFUyBTY3JlZW5pbmcgU2VydmljZSIKCQkKCQlncG1zIC0+IGdwZXMKCQlncGVzIC0+IGdwMmRycwoJCWdwMmRycyAtPiBoaWMKCQloaWMgLT4gcXVpY2tzaWx2YQoJCXF1aWNrc2lsdmEgLT4gZGVzX3NjcmVlbmluZ19zZXJ2aWNlCgl9CgkKCWNvbmZpZ3VyYXRpb24gewoJCXNjb3BlIHNvZnR3YXJlc3lzdGVtCgl9CgkKCXZpZXdzIHsKCQlzeXN0ZW1MYW5kc2NhcGUgZGlnaXRhbF9zY3JlZW5pbmcgIkFsbCBTeXN0ZW1zIENvbnRleHQiIHsKCQkJaW5jbHVkZSAqCgkJCWF1dG9sYXlvdXQgbHIKCQl9CgkJCgkJc3lzdGVtQ29udGV4dCBuYnNzICJCcmVhc3RfU2NyZWVuaW5nIiB7CgkJCWluY2x1ZGUgbmJzcyBic2lzIGJzX3NlbGVjdCBjb2hvcnRfbWFuYWdlciBjYWFzIHBpIHBkcyBtb2RhbGl0eSBsb2NhbF9wYWNzIGdwbXMgbGltcyBiYXJkIGl1dm8KCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQlzeXN0ZW1Db250ZXh0IGJjc3MgIkJvd2VsX1NjcmVlbmluZyIgewoJCQlpbmNsdWRlIGJjc3MgZXByIGdwbXMgcGRzIHBpIGJvd2VsX29iaWVlIGZpdF9hbmFseXNlciBmaXRfbWlkZGxld2FyZSByZGkgY3RfY29sb25vc2NvcHkKCQkJYXV0b2xheW91dCBscgoJCX0KCQlzeXN0ZW1Db250ZXh0IGFhYSAiQUFBX1NjcmVlbmluZyIgewoJCQlpbmNsdWRlIGFhYSBwaQoJCQlhdXRvbGF5b3V0IGxyCgkJfQoJCXN5c3RlbUNvbnRleHQgZGVzX3NjcmVlbmluZ19zZXJ2aWNlICJEaWFiZXRpY19FeWVfU2NyZWVuaW5nIiB7CgkJCWluY2x1ZGUgZ3BtcyBncGVzIGdwMmRycyBoaWMgZGVzX3NjcmVlbmluZ19zZXJ2aWNlIHF1aWNrc2lsdmEKCQkJYXV0b2xheW91dCBscgoJCX0KCQkKCQl0aGVtZSBkZWZhdWx0CgkJCgkJc3R5bGVzIHsKCQkJZWxlbWVudCAiTkhTIEVuZ2xhbmQgU2hhcmVkIENvbXBvbmVudCIgewoJCQkJYmFja2dyb3VuZCAjRkZENzAwCgkJCQljb2xvciAjMjIyMjIyCgkJCX0KCQkJZWxlbWVudCAiRXh0ZXJuYWwgU3lzdGVtIiB7CgkJCQliYWNrZ3JvdW5kICNBMkFBQUQKCQkJCWNvbG9yICMyMjIyMjIKCQkJfQoJCQllbGVtZW50ICJPdXRzb3VyY2VkIFN5c3RlbSIgewoJCQkJYmFja2dyb3VuZCAjNkVDMUU0CgkJCQljb2xvciAjMjIyMjIyCgkJCX0KCQkJZWxlbWVudCAiRGlnaXRhbCBTY3JlZW5pbmcgU3lzdGVtIiB7CgkJCQliYWNrZ3JvdW5kICMwMDk2MzkKCQkJCWNvbG9yICNmZmZmZmYKCQkJfQoJCQllbGVtZW50ICJGdXR1cmUiIHsKCQkJCWljb24gImh0dHBzOi8vdXBsb2FkLndpa2ltZWRpYS5vcmcvd2lraXBlZGlhL2NvbW1vbnMvZS9lMS9Fb19jaXJjbGVfZ3JlZW5fYXJyb3ctcmlnaHQuc3ZnIgoJCQl9CgkJfQoJfQoJCgkjIFVzZSBHcmFwaHZpeiB0byBhdXRvbWF0aWNhbGx5IGxheW91dCB0aGUgZGlhZ3JhbXMKCSMgaHR0cHM6Ly9naXRodWIuY29tL3N0cnVjdHVyaXpyL2phdmEvdHJlZS9tYXN0ZXIvc3RydWN0dXJpenItYXV0b2xheW91dAoJIXNjcmlwdCBncm9vdnkgewoJCW5ldyBjb20uc3RydWN0dXJpenIuYXV0b2xheW91dC5ncmFwaHZpei5HcmFwaHZpekF1dG9tYXRpY0xheW91dCgpLmFwcGx5KHdvcmtzcGFjZSk7Cgl9Cn0="
   },
   "views" : {
     "configuration" : {
       "branding" : { },
       "styles" : {
         "elements" : [ {
-          "background" : "#999900",
-          "tag" : "External Shared Component"
+          "background" : "#ffd700",
+          "color" : "#222222",
+          "tag" : "NHS England Shared Component"
         }, {
-          "background" : "#0099ff",
-          "tag" : "Screening Service"
+          "background" : "#a2aaad",
+          "color" : "#222222",
+          "tag" : "External System"
         }, {
-          "background" : "#6c18ff",
-          "tag" : "External Data User"
+          "background" : "#6ec1e4",
+          "color" : "#222222",
+          "tag" : "Outsourced System"
+        }, {
+          "background" : "#009639",
+          "color" : "#ffffff",
+          "tag" : "Digital Screening System"
         }, {
           "icon" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eo_circle_green_arrow-right.svg",
           "tag" : "Future"
@@ -553,79 +528,83 @@
         "vertices" : false
       },
       "dimensions" : {
-        "height" : 3050,
+        "height" : 3350,
         "width" : 5366
       },
       "elements" : [ {
         "id" : "2",
         "x" : 4708,
-        "y" : 1862
+        "y" : 2204
       }, {
         "id" : "3",
         "x" : 208,
-        "y" : 1942
+        "y" : 2162
       }, {
         "id" : "4",
         "x" : 1708,
-        "y" : 1642
+        "y" : 1862
       }, {
         "id" : "5",
         "x" : 958,
-        "y" : 2242
+        "y" : 2462
       }, {
         "id" : "7",
-        "x" : 3208,
-        "y" : 808
+        "x" : 1708,
+        "y" : 2462
+      }, {
+        "id" : "8",
+        "x" : 2458,
+        "y" : 2162
+      }, {
+        "id" : "9",
+        "x" : 3958,
+        "y" : 1883
       }, {
         "id" : "10",
-        "x" : 1708,
-        "y" : 2242
+        "x" : 4708,
+        "y" : 2842
       }, {
         "id" : "11",
-        "x" : 2458,
-        "y" : 1942
+        "x" : 3208,
+        "y" : 1408
       }, {
         "id" : "12",
-        "x" : 3958,
-        "y" : 1562
+        "x" : 4708,
+        "y" : 1604
       }, {
         "id" : "13",
-        "x" : 4708,
-        "y" : 2542
-      }, {
-        "id" : "14",
-        "x" : 3208,
-        "y" : 2317
-      }, {
-        "id" : "15",
-        "x" : 4708,
-        "y" : 1262
-      }, {
-        "id" : "16",
         "x" : 3208,
         "y" : 208
       }, {
-        "id" : "17",
+        "id" : "14",
         "x" : 3958,
-        "y" : 962
+        "y" : 1283
+      }, {
+        "id" : "15",
+        "x" : 3208,
+        "y" : 808
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "Breast_Screening",
       "order" : 2,
       "paperSize" : "A2_Landscape",
       "relationships" : [ {
-        "id" : "18"
+        "id" : "16"
       }, {
-        "id" : "19"
+        "id" : "17"
       }, {
-        "id" : "20",
+        "id" : "18",
         "vertices" : [ {
           "x" : 3658,
           "y" : 658
         }, {
           "x" : 3958,
-          "y" : 1412
+          "y" : 1733
         } ]
+      }, {
+        "id" : "19"
+      }, {
+        "id" : "20"
       }, {
         "id" : "21"
       }, {
@@ -637,14 +616,7 @@
       }, {
         "id" : "25"
       }, {
-        "id" : "26",
-        "vertices" : [ {
-          "x" : 3208,
-          "y" : 2767
-        }, {
-          "x" : 3658,
-          "y" : 2767
-        } ]
+        "id" : "26"
       }, {
         "id" : "27"
       }, {
@@ -656,13 +628,16 @@
       }, {
         "id" : "31"
       }, {
-        "id" : "32"
-      }, {
-        "id" : "33"
-      }, {
-        "id" : "34"
+        "id" : "32",
+        "vertices" : [ {
+          "x" : 3658,
+          "y" : 1258
+        }, {
+          "x" : 3958,
+          "y" : 1733
+        } ]
       } ],
-      "softwareSystemId" : "12"
+      "softwareSystemId" : "9"
     }, {
       "automaticLayout" : {
         "applied" : false,
@@ -690,40 +665,40 @@
         "x" : 958,
         "y" : 1529
       }, {
-        "id" : "8",
-        "x" : 958,
-        "y" : 2129
-      }, {
-        "id" : "9",
-        "x" : 2458,
-        "y" : 2729
-      }, {
-        "id" : "40",
+        "id" : "38",
         "x" : 1708,
         "y" : 1829
       }, {
-        "id" : "41",
+        "id" : "39",
         "x" : 2458,
         "y" : 1529
       }, {
-        "id" : "42",
+        "id" : "40",
         "x" : 2458,
         "y" : 2129
       }, {
-        "id" : "43",
+        "id" : "41",
         "x" : 3208,
         "y" : 2729
       }, {
-        "id" : "44",
+        "id" : "42",
         "x" : 2458,
         "y" : 329
+      }, {
+        "id" : "43",
+        "x" : 958,
+        "y" : 2129
+      }, {
+        "id" : "44",
+        "x" : 2458,
+        "y" : 2729
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "Bowel_Screening",
       "order" : 3,
       "paperSize" : "A3_Landscape",
       "relationships" : [ {
-        "id" : "18"
+        "id" : "16"
       }, {
         "id" : "45"
       }, {
@@ -764,7 +739,7 @@
           "y" : 779
         } ]
       } ],
-      "softwareSystemId" : "40"
+      "softwareSystemId" : "38"
     }, {
       "automaticLayout" : {
         "applied" : false,
@@ -776,36 +751,24 @@
         "vertices" : false
       },
       "dimensions" : {
-        "height" : 958,
-        "width" : 3220
+        "height" : 716,
+        "width" : 1616
       },
       "elements" : [ {
         "id" : "4",
         "x" : 208,
-        "y" : 329
+        "y" : 208
       }, {
         "id" : "55",
         "x" : 958,
-        "y" : 329
-      }, {
-        "id" : "56",
-        "x" : 1708,
-        "y" : 329
-      }, {
-        "id" : "57",
-        "x" : 2458,
-        "y" : 329
+        "y" : 208
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "AAA_Screening",
       "order" : 4,
-      "paperSize" : "A4_Landscape",
+      "paperSize" : "A6_Landscape",
       "relationships" : [ {
-        "id" : "58"
-      }, {
-        "id" : "59"
-      }, {
-        "id" : "60"
+        "id" : "56"
       } ],
       "softwareSystemId" : "55"
     }, {
@@ -835,15 +798,15 @@
         "x" : 1708,
         "y" : 208
       }, {
-        "id" : "61",
+        "id" : "57",
         "x" : 2458,
         "y" : 208
       }, {
-        "id" : "62",
+        "id" : "58",
         "x" : 3208,
         "y" : 208
       }, {
-        "id" : "63",
+        "id" : "59",
         "x" : 3958,
         "y" : 208
       } ],
@@ -852,17 +815,17 @@
       "order" : 5,
       "paperSize" : "A3_Landscape",
       "relationships" : [ {
+        "id" : "60"
+      }, {
+        "id" : "61"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
         "id" : "64"
-      }, {
-        "id" : "65"
-      }, {
-        "id" : "66"
-      }, {
-        "id" : "67"
-      }, {
-        "id" : "68"
       } ],
-      "softwareSystemId" : "63"
+      "softwareSystemId" : "59"
     } ],
     "systemLandscapeViews" : [ {
       "automaticLayout" : {
@@ -876,140 +839,139 @@
       },
       "description" : "All Systems Context",
       "dimensions" : {
-        "height" : 7787,
-        "width" : 9116
+        "height" : 6279,
+        "width" : 6866
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 5458,
-        "y" : 3645
+        "x" : 3208,
+        "y" : 3337
       }, {
         "id" : "2",
-        "x" : 4708,
-        "y" : 3645
+        "x" : 2458,
+        "y" : 3337
       }, {
         "id" : "3",
         "x" : 208,
-        "y" : 2295
+        "y" : 3345
       }, {
         "id" : "4",
-        "x" : 1708,
-        "y" : 1691
+        "x" : 958,
+        "y" : 2741
       }, {
         "id" : "5",
         "x" : 958,
-        "y" : 2295
+        "y" : 3345
       }, {
         "id" : "6",
-        "x" : 6208,
-        "y" : 3645
+        "x" : 3958,
+        "y" : 3337
       }, {
         "id" : "7",
-        "x" : 3208,
-        "y" : 3645
+        "x" : 1708,
+        "y" : 3941
       }, {
         "id" : "8",
-        "x" : 1708,
-        "y" : 4020
+        "x" : 2458,
+        "y" : 3937
       }, {
         "id" : "9",
-        "x" : 3208,
-        "y" : 7262
+        "x" : 1708,
+        "y" : 4541
       }, {
         "id" : "10",
-        "x" : 1708,
-        "y" : 2291
+        "x" : 3208,
+        "y" : 4241
       }, {
         "id" : "11",
-        "x" : 2458,
-        "y" : 1691
+        "x" : 3208,
+        "y" : 4845
       }, {
         "id" : "12",
-        "x" : 3958,
-        "y" : 2445
+        "x" : 2458,
+        "y" : 5754
       }, {
         "id" : "13",
-        "x" : 4708,
-        "y" : 1391
+        "x" : 958,
+        "y" : 4545
       }, {
         "id" : "14",
-        "x" : 3208,
-        "y" : 2445
+        "x" : 1708,
+        "y" : 5754
       }, {
         "id" : "15",
-        "x" : 4708,
-        "y" : 2445
-      }, {
-        "id" : "16",
-        "x" : 3208,
-        "y" : 3045
-      }, {
-        "id" : "17",
-        "x" : 3958,
-        "y" : 3045
-      }, {
-        "id" : "35",
         "x" : 958,
-        "y" : 4620
+        "y" : 3945
       }, {
-        "id" : "36",
+        "id" : "33",
+        "x" : 958,
+        "y" : 5145
+      }, {
+        "id" : "34",
         "x" : 1708,
-        "y" : 4620
+        "y" : 5145
+      }, {
+        "id" : "38",
+        "x" : 1708,
+        "y" : 2133
+      }, {
+        "id" : "39",
+        "x" : 2458,
+        "y" : 929
       }, {
         "id" : "40",
         "x" : 2458,
-        "y" : 5154
+        "y" : 2737
       }, {
         "id" : "41",
         "x" : 3208,
-        "y" : 5454
+        "y" : 2137
       }, {
         "id" : "42",
-        "x" : 3208,
-        "y" : 6054
+        "x" : 2458,
+        "y" : 329
       }, {
         "id" : "43",
-        "x" : 3958,
-        "y" : 6658
+        "x" : 958,
+        "y" : 2133
       }, {
         "id" : "44",
-        "x" : 3208,
-        "y" : 4854
+        "x" : 2458,
+        "y" : 2137
       }, {
         "id" : "55",
-        "x" : 2458,
-        "y" : 712
-      }, {
-        "id" : "56",
-        "x" : 3208,
-        "y" : 329
+        "x" : 1708,
+        "y" : 3341
       }, {
         "id" : "57",
-        "x" : 3958,
-        "y" : 329
+        "x" : 4708,
+        "y" : 3337
       }, {
-        "id" : "61",
-        "x" : 6958,
-        "y" : 3645
+        "id" : "58",
+        "x" : 5458,
+        "y" : 3337
       }, {
-        "id" : "62",
-        "x" : 7708,
-        "y" : 3645
-      }, {
-        "id" : "63",
-        "x" : 8458,
-        "y" : 3645
+        "id" : "59",
+        "x" : 6208,
+        "y" : 3337
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "digital_screening",
       "order" : 1,
-      "paperSize" : "A0_Landscape",
+      "paperSize" : "A1_Landscape",
       "relationships" : [ {
-        "id" : "18",
+        "id" : "16"
+      }, {
+        "id" : "17",
         "vertices" : [ {
-          "x" : 958,
-          "y" : 2145
+          "x" : 2158,
+          "y" : 3191
+        }, {
+          "x" : 2354,
+          "y" : 3787
         } ]
+      }, {
+        "id" : "18"
       }, {
         "id" : "19"
       }, {
@@ -1021,116 +983,105 @@
       }, {
         "id" : "23",
         "vertices" : [ {
-          "x" : 3762,
-          "y" : 2145
+          "x" : 2158,
+          "y" : 4391
+        }, {
+          "x" : 2354,
+          "y" : 3787
         } ]
       }, {
-        "id" : "24",
-        "vertices" : [ {
-          "x" : 3762,
-          "y" : 2445
-        } ]
+        "id" : "24"
       }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 4512,
-          "y" : 2895
-        } ]
+        "id" : "25"
       }, {
-        "id" : "26",
-        "vertices" : [ {
-          "x" : 3104,
-          "y" : 1783
-        } ]
+        "id" : "26"
       }, {
         "id" : "27"
       }, {
         "id" : "28"
       }, {
-        "id" : "29"
+        "id" : "29",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 5145
+        }, {
+          "x" : 2354,
+          "y" : 5679
+        } ]
       }, {
-        "id" : "30"
+        "id" : "30",
+        "vertices" : [ {
+          "x" : 2354,
+          "y" : 5379
+        } ]
       }, {
         "id" : "31"
       }, {
         "id" : "32"
       }, {
-        "id" : "33"
-      }, {
-        "id" : "34",
+        "id" : "35",
         "vertices" : [ {
-          "x" : 3762,
-          "y" : 3495
-        }, {
-          "x" : 3958,
-          "y" : 2895
+          "x" : 958,
+          "y" : 4995
         } ]
+      }, {
+        "id" : "36"
       }, {
         "id" : "37"
       }, {
-        "id" : "38"
-      }, {
-        "id" : "39"
-      }, {
-        "id" : "45"
-      }, {
-        "id" : "46",
+        "id" : "45",
         "vertices" : [ {
-          "x" : 2158,
-          "y" : 4470
+          "x" : 2354,
+          "y" : 1454
         } ]
+      }, {
+        "id" : "46"
       }, {
         "id" : "47",
         "vertices" : [ {
-          "x" : 3104,
-          "y" : 4675
-        } ]
-      }, {
-        "id" : "48",
-        "vertices" : [ {
           "x" : 2158,
-          "y" : 2141
+          "y" : 2658
+        }, {
+          "x" : 2354,
+          "y" : 3187
         } ]
       }, {
-        "id" : "49",
-        "vertices" : [ {
-          "x" : 3104,
-          "y" : 7037
-        } ]
+        "id" : "48"
+      }, {
+        "id" : "49"
       }, {
         "id" : "50"
       }, {
         "id" : "51",
         "vertices" : [ {
-          "x" : 3104,
-          "y" : 6504
+          "x" : 3012,
+          "y" : 1987
+        }, {
+          "x" : 2354,
+          "y" : 1987
         } ]
       }, {
-        "id" : "52",
-        "vertices" : [ {
-          "x" : 3104,
-          "y" : 5904
-        } ]
+        "id" : "52"
       }, {
         "id" : "53"
       }, {
-        "id" : "54"
+        "id" : "54",
+        "vertices" : [ {
+          "x" : 2354,
+          "y" : 779
+        } ]
       }, {
-        "id" : "58"
-      }, {
-        "id" : "59"
+        "id" : "56"
       }, {
         "id" : "60"
       }, {
+        "id" : "61"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
         "id" : "64"
-      }, {
-        "id" : "65"
-      }, {
-        "id" : "66"
-      }, {
-        "id" : "67"
-      }, {
-        "id" : "68"
       } ]
     } ]
   }

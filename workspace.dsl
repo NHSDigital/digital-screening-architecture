@@ -2,42 +2,40 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 	
 	model {
 		archetypes {
-			screening_service = softwareSystem "Screening Service" {
-				tag "Screening Service"
+			nhs_shared_component = softwareSystem "NHS England Shared Component" {
+				tag "NHS England Shared Component"
 			}
-			external_shared_component = softwareSystem "External Shared Component" {
-				tag "External Shared Component"
+			external_system = softwareSystem "External System" {
+				tag "External System"
 			}
-			external_data_user = softwareSystem "External Data User" {
-				tag "External Data User"
+			outsourced_system = softwareSystem "Outsourced System" {
+				tag "Outsourced System"
+			}
+			digital_screening_system = softwareSystem "Digital Screening System" {
+				tag "Digital Screening System"
 			}
 		}
 		
 		
 		
-		gpes = external_shared_component "GPES"
-		gpms = external_shared_component "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
-		pds = external_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
-		pi = softwareSystem "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
-		caas = external_shared_component "Cohorting as a Service (CAAS)"
-		gp2drs = softwareSystem "GP2DRS"
-		
-		lims = softwareSystem "Lab Information Systems (LIMS)"
-		epr = softwareSystem "Electronic Patient Record (EPR)"
-		rdi = softwareSystem "RDI"
+		gpes = nhs_shared_component "GPES"
+		gpms = external_system "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
+		pds = nhs_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
+		pi = digital_screening_system "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
+		caas = nhs_shared_component "Cohorting as a Service (CAAS)"
+		gp2drs = digital_screening_system "GP2DRS"
 		
 		// Breast Screening Pathway specific systems
-		cohort_manager = softwareSystem "Cohort Manager"
-		bs_select = softwareSystem "BS Select"
-		nbss = screening_service "National Breast Screening Service (NBSS)"
-		bsis = screening_service "Breast Screening Information Service (BSIS)"
-		iuvo = softwareSystem "Iuvo"
-		local_pacs = softwareSystem "Local Picture and Archiving System (PACS)"
+		cohort_manager = digital_screening_system "Cohort Manager"
+		bs_select = digital_screening_system "BS Select"
+		nbss = digital_screening_system "National Breast Screening Service (NBSS)"
+		bsis = digital_screening_system "Breast Screening Information Service (BSIS)"
+		iuvo = outsourced_system "Iuvo"
+		local_pacs = external_system "Local Picture and Archiving System (PACS)"
 		// BARD is going to be replace by National Disease Registration Service (NDRS) (resusable component)
-		bard = softwareSystem "Breastscreening Active Radiotherapy Dataset" {
-			tag "External System"
-		}
-		modality = softwareSystem "Imaging Modality (MRI, Mammography, Ultrasound)"
+		bard = external_system "Breastscreening Active Radiotherapy Dataset"
+		modality = external_system "Imaging Modality (MRI, Mammography, Ultrasound)"
+		lims = external_system "Lab Information Systems (LIMS)"
 		
 		pds -> pi "provide registrations and demographics"
 		pi -> bs_select "perform dq check, send demographic updates"
@@ -61,20 +59,23 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		lims -> nbss "manual entry"
 		
 		// Cervical Screening Pathway
-		csms = softwareSystem "CSMS"
-		cervical_home_testing = softwareSystem "Cervical Home Testing"
+		csms = digital_screening_system "CSMS"
+		cervical_home_testing = digital_screening_system "Cervical Home Testing"
 		pds -> csms
 		csms -> cervical_home_testing
 		cervical_home_testing -> csms
 		
 		// Bowel Screening Pathway
-		bcss = softwareSystem "Bowel Cancer Screening System (BCSS)"
-		bowel_obiee = softwareSystem "Bowel OBIEE"
-		fit_analyser = softwareSystem "FIT Analyser"
-		fit_middleware = softwareSystem "FIT Middleware"
+		bcss = digital_screening_system "Bowel Cancer Screening System (BCSS)"
+		bowel_obiee = digital_screening_system "Bowel OBIEE"
+		fit_analyser = external_system "FIT Analyser"
+		fit_middleware = external_system "FIT Middleware"
 		group "Specialist Screening" {
-			ct_colonoscopy = softwareSystem "CT Colonoscopy"
+			ct_colonoscopy = external_system "CT Colonoscopy"
 		}
+		epr = external_system "Electronic Patient Record (EPR)"
+		rdi = external_system "RDI"
+		
 		bcss -> bowel_obiee "Magic ETL"
 		epr -> bcss
 		bcss -> gpms "EDIFACT send outcome"
@@ -87,23 +88,14 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bcss -> ct_colonoscopy
 		
 		// AAA Screening Pathway
-		aaa = screening_service "SMaRT" "Outsourced national system with 38 local providers to access it"
-		
-		group "Reporting" {
-			aaadatawarehouse = softwareSystem "Data Warehouse"
-			aaaqareporting = softwareSystem "QA Reporting"
-		}
+		aaa = outsourced_system "SMaRT" "Outsourced national system with 38 local providers to access it"
 		
 		pi -> aaa "Cohort of men due to reach 65 the following year"
-		aaa -> aaadatawarehouse
-		aaadatawarehouse -> aaaqareporting
-		
-		
 		
 		// Diabetic Eye Screening (DES) Pathway
-		hic = softwareSystem "HIC"
-		quicksilva = softwareSystem "Quicksilva"
-		des_screening_service = screening_service "DES Screening Service"
+		hic = outsourced_system "HIC"
+		quicksilva = outsourced_system "Quicksilva"
+		des_screening_service = outsourced_system "DES Screening Service"
 		
 		gpms -> gpes
 		gpes -> gp2drs
@@ -132,7 +124,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			autolayout lr
 		}
 		systemContext aaa "AAA_Screening" {
-			include aaa pi aaadatawarehouse aaaqareporting
+			include aaa pi
 			autolayout lr
 		}
 		systemContext des_screening_service "Diabetic_Eye_Screening" {
@@ -143,14 +135,24 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		theme default
 		
 		styles {
-			element "External Shared Component" {
-				background #999900
+			element "NHS England Shared Component" {
+				background #FFD700
+				color #222222
 			}
-			element "Screening Service" {
-				background #0099FF
+			element "External System" {
+				background #A2AAAD
+				color #222222
 			}
-			element "External Data User" {
-				background #6c18ff
+			element "Outsourced System" {
+				background #6EC1E4
+				color #222222
+			}
+			element "Digital Screening System" {
+				background #009639
+				color #ffffff
+			}
+			element "Future" {
+				icon "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eo_circle_green_arrow-right.svg"
 			}
 		}
 	}
