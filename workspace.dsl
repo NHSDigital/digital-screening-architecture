@@ -24,13 +24,15 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		pi = digital_screening_system "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
 		caas = nhs_shared_component "Cohorting as a Service (CAAS)"
 		gp2drs = digital_screening_system "GP2DRS"
+		cis2 = nhs_shared_component "CIS2"
+		mesh = nhs_shared_component "MESh"
 		
 		// Breast Screening Pathway specific systems
 		cohort_manager = digital_screening_system "Cohort Manager"
 		bs_select = digital_screening_system "BS Select"
 		nbss = digital_screening_system "National Breast Screening Service (NBSS)"
 		bsis = digital_screening_system "Breast Screening Information Service (BSIS)"
-		iuvo = outsourced_system "Iuvo"
+		iuvo = outsourced_system "Iuvo Clin-ePost"
 		local_pacs = external_system "Local Picture and Archiving System (PACS)"
 		// BARD is going to be replace by National Disease Registration Service (NDRS) (resusable component)
 		bard = external_system "Breastscreening Active Radiotherapy Dataset"
@@ -41,12 +43,18 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		pi -> bs_select "perform dq check, send demographic updates"
 		bard -> nbss "manual request for adding people to cohort"
 		
-		bs_select -> iuvo "cohort"
-		iuvo -> nbss "send screening episode outcomes"
-		nbss -> bs_select "send screening episode outcomes (MESH)"
+		bs_select -> iuvo "participant data"
+		iuvo -> mesh "participant data"
+		mesh -> nbss "participant data"
+		
+		nbss -> mesh "screening episode outcomes"
+		mesh -> iuvo "screening episode outcomes"
+		iuvo -> bs_select "screening episode outcomes"
+		
 		bs_select -> nbss "manual entry of round plan"
 		nbss -> gpms "send screening results (letter)"
 		bs_select -> bsis "data services: KC63"
+		cis2 -> bs_select
 		
 		pds -> caas
 		caas -> cohort_manager
@@ -115,7 +123,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext nbss "Breast_Screening" {
-			include nbss bsis bs_select cohort_manager caas pi pds modality local_pacs gpms lims bard iuvo
+			include nbss bsis bs_select cohort_manager caas pi pds modality local_pacs gpms lims bard iuvo cis2 mesh
 			autolayout lr
 		}
 		
