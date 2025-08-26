@@ -132,6 +132,11 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 			autolayout lr
 		}
 		
+		systemContext csms "Cervical_Screening" {
+			include csms cervical_home_testing pds
+			autolayout lr
+		}
+		
 		theme default
 		
 		styles {
