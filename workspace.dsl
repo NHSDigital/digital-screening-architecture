@@ -135,21 +135,21 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		theme default
 		
 		styles {
+			element "Digital Screening System" {
+				background #009639
+				color #ffffff
+			}
 			element "NHS England Shared Component" {
 				background #FFD700
-				color #222222
-			}
-			element "External System" {
-				background #A2AAAD
 				color #222222
 			}
 			element "Outsourced System" {
 				background #6EC1E4
 				color #222222
 			}
-			element "Digital Screening System" {
-				background #009639
-				color #ffffff
+			element "External System" {
+				background #A2AAAD
+				color #222222
 			}
 			element "Future" {
 				icon "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eo_circle_green_arrow-right.svg"
