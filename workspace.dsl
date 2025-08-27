@@ -26,6 +26,10 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		gp2drs = digital_screening_system "GP2DRS"
 		cis2 = nhs_shared_component "CIS2"
 		mesh = nhs_shared_component "MESh"
+		notify = nhs_shared_component "Notify"
+		ods = nhs_shared_component "Organisation Data Service (ODS)"
+		nhsnet = nhs_shared_component "NHS.Net Exchange"
+		dps = nhs_shared_component "Data Provisioning Service (DPS)"
 		
 		// Breast Screening Pathway specific systems
 		cohort_manager = digital_screening_system "Cohort Manager"
@@ -69,9 +73,23 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		// Cervical Screening Pathway
 		csms = digital_screening_system "CSMS"
 		cervical_home_testing = digital_screening_system "Cervical Home Testing"
-		pds -> csms
-		csms -> cervical_home_testing
-		cervical_home_testing -> csms
+		capita_notifications = outsourced_system "Capita Notifications"
+		pds -> csms "cohort"
+		csms -> cervical_home_testing "cohort"
+		cervical_home_testing -> csms "invitation flag"
+		cis2 -> csms
+		csms -> notify "notifications to participants"
+		csms -> capita_notifications "letters to participants"
+		csms -> nhsnet "Emails to GP Practices"
+		lims -> mesh "lab results"
+		mesh -> csms "lab results"
+		mesh -> gpms "lab results"
+		ods -> csms "GP Practice details"
+		csms -> dps
+		
+		cervical_home_testing_provider = external_system "Cervical Home Testing Provider"
+		cervical_home_testing -> cervical_home_testing_provider
+		cervical_home_testing -> notify
 		
 		// Bowel Screening Pathway
 		bcss = digital_screening_system "Bowel Cancer Screening System (BCSS)"
@@ -141,7 +159,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext csms "Cervical_Screening" {
-			include csms cervical_home_testing pds
+			include csms cervical_home_testing pds cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
 			autolayout lr
 		}
 		
