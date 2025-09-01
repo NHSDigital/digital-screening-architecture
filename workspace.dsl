@@ -94,24 +94,21 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		// Bowel Screening Pathway
 		bcss = digital_screening_system "Bowel Cancer Screening System (BCSS)"
 		bowel_obiee = digital_screening_system "Bowel OBIEE"
-		fit_analyser = external_system "FIT Analyser"
-		fit_middleware = external_system "FIT Middleware"
-		group "Specialist Screening" {
-			ct_colonoscopy = external_system "CT Colonoscopy"
-		}
-		epr = external_system "Electronic Patient Record (EPR)"
+		fit_middleware = outsourced_system "FIT Kit Middleware" "Provides results from FIT Anlalyser"
 		rdi = external_system "RDI"
+		ndrs = external_system "NDRS" "National Disease Registration Service"
 		
-		bcss -> bowel_obiee "Magic ETL"
-		epr -> bcss
-		bcss -> gpms "EDIFACT send outcome"
-		pi -> bcss
-		bcss -> rdi
-		rdi -> fit_middleware
-		fit_middleware -> bcss "bespoke REST API"
-		bcss -> fit_analyser
-		fit_analyser -> fit_middleware "bespoke REST API"
-		bcss -> ct_colonoscopy
+		bcss -> bowel_obiee "ODI ETL"
+		pi -> bcss "Oracle Queues"
+		ndrs -> bcss "lynch cohort (high risk)"
+		bcss -> rdi "post letters to participants (manual?)"
+		fit_middleware -> bcss "FIT results"
+		bcss -> fit_middleware "FIT requests"
+		bcss -> iuvo "outcome"
+		iuvo -> gpms "EDIFACT send outcome"
+		cis2 -> bcss
+		bcss -> notify "notifications to participants"
+		ods -> bcss "Organisation details"
 		
 		// AAA Screening Pathway
 		aaa = outsourced_system "SMaRT" "Outsourced national system with 38 local providers to access it"
@@ -146,7 +143,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext bcss "Bowel_Screening" {
-			include bcss epr gpms pds pi bowel_obiee fit_analyser fit_middleware rdi ct_colonoscopy
+			include bcss gpms pds pi bowel_obiee fit_middleware rdi iuvo ndrs ndrs cis2 ods notify
 			autolayout lr
 		}
 		systemContext aaa "AAA_Screening" {
