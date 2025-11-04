@@ -33,6 +33,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          exclude_assets: pr-preview,pr-preview/**
-          enable_jekyll: false
+          keep_files: true
+          publish_branch: gh-pages
