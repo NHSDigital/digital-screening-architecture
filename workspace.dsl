@@ -18,12 +18,8 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		
 		
 		
-		gpes = nhs_shared_component "GPES"
 		gpms = external_system "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
-		pds = nhs_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
-		pi = digital_screening_system "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
 		caas = nhs_shared_component "Cohorting as a Service (CAAS)"
-		gp2drs = digital_screening_system "GP2DRS"
 		cis2 = nhs_shared_component "CIS2"
 		mesh = nhs_shared_component "MESh"
 		notify = nhs_shared_component "Notify"
@@ -43,8 +39,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		modality = external_system "Imaging Modality (MRI, Mammography, Ultrasound)"
 		lims = external_system "Lab Information Systems (LIMS)"
 		
-		pds -> pi "provide registrations and demographics"
-		pi -> bs_select "perform dq check, send demographic updates"
 		bard -> nbss "manual request for adding people to cohort"
 		
 		bs_select -> iuvo "participant data"
@@ -60,7 +54,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		bs_select -> bsis "data services: KC63"
 		cis2 -> bs_select
 		
-		pds -> caas
 		caas -> cohort_manager
 		cohort_manager -> bs_select
 		nbss -> bsis "KC62 as manual CSV upload"
@@ -74,7 +67,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		csms = digital_screening_system "CSMS"
 		cervical_home_testing = digital_screening_system "Cervical Home Testing"
 		capita_notifications = outsourced_system "Capita Notifications"
-		pds -> csms "cohort"
+		caas -> csms "cohort"
 		csms -> cervical_home_testing "cohort"
 		cervical_home_testing -> csms "invitation flag"
 		cis2 -> csms
@@ -99,7 +92,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		ndrs = external_system "NDRS" "National Disease Registration Service"
 		
 		bcss -> bowel_obiee "ODI ETL"
-		pi -> bcss "Oracle Queues"
+		caas -> bcss "Cohort"
 		ndrs -> bcss "lynch cohort (high risk)"
 		bcss -> rdi "post letters to participants (manual?)"
 		fit_middleware -> bcss "FIT results"
@@ -113,18 +106,12 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		// AAA Screening Pathway
 		aaa = outsourced_system "SMaRT" "Outsourced national system with 38 local providers to access it"
 		
-		pi -> aaa "Cohort of men due to reach 65 the following year"
+		caas -> aaa "Cohort of men due to reach 65 the following year"
 		
 		// Diabetic Eye Screening (DES) Pathway
-		hic = outsourced_system "HIC"
-		quicksilva = outsourced_system "Quicksilva"
 		des_screening_service = outsourced_system "DES Screening Service"
 		
-		gpms -> gpes
-		gpes -> gp2drs
-		gp2drs -> hic
-		hic -> quicksilva
-		quicksilva -> des_screening_service
+		caas -> des_screening_service
 	}
 	
 	configuration {
@@ -138,25 +125,25 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 		}
 		
 		systemContext nbss "Breast_Screening" {
-			include nbss bsis bs_select cohort_manager caas pi pds modality local_pacs gpms lims bard iuvo cis2 mesh
+			include nbss bsis bs_select cohort_manager caas modality local_pacs gpms lims bard iuvo cis2 mesh
 			autolayout lr
 		}
 		
 		systemContext bcss "Bowel_Screening" {
-			include bcss gpms pds pi bowel_obiee fit_middleware rdi iuvo ndrs ndrs cis2 ods notify
+			include bcss gpms caas bowel_obiee fit_middleware rdi iuvo ndrs ndrs cis2 ods notify
 			autolayout lr
 		}
 		systemContext aaa "AAA_Screening" {
-			include aaa pi
+			include aaa caas
 			autolayout lr
 		}
 		systemContext des_screening_service "Diabetic_Eye_Screening" {
-			include gpms gpes gp2drs hic des_screening_service quicksilva
+			include caas des_screening_service
 			autolayout lr
 		}
 		
 		systemContext csms "Cervical_Screening" {
-			include csms cervical_home_testing pds cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
+			include csms cervical_home_testing caas cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
 			autolayout lr
 		}
 		
