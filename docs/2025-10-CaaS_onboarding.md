@@ -52,7 +52,7 @@ CSMS currently extracts its cohort directly from PDS. This is causing many issue
 -------
 
 - **When**: Q2-Q3 2026
-- **Teams**: CSMS End User Team, CaaS
+- **Teams**: AAA Team, CaaS
 
 By the time we get to AAA, we should hopefully have created all of the solutions required to make this migration quite simple. This work would involve migrating to PDS for demographics, and maybe away from current posting.
 
