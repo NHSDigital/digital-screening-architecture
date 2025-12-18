@@ -32,21 +32,21 @@ This work will need to then consider how to migrate Cervical, Bowel and AAA afte
 
 DES is an outsourced service, but we provide cohorting to the providers. There is an urgent commercial need to find a new solution. Work is currently underway between the two teams, working together to create a solution. This work will require additional funding to get to production.
 
-4\. Lung Cancer Screening
--------------------------
-
-- **When**: Q1-Q2 2026
-- **Teams**: Lung, CaaS
-
-We are a developing a new service for a pre-screening questionnaire for the outsourced lung screening programme. For its private beta it will be extracting the cohort from the supplier, and then providing data back to the supplier. For the next stage of work, it will get the cohort directly from GP systems via CaaS, and then provide the cohort along with questionnaire results to the supplier.
-
-5\. Cervical Screening
+4\. Cervical Screening
 ----------------------
 
 - **When**: Q3-Q4 2025
 - **Teams**: CSMS End User Team, CaaS
 
 CSMS currently extracts its cohort directly from PDS. This is causing many issues for them. We want them to get their cohort from CaaS. This work would involve migrating to PDS for demographics, but not migrating away from current posting as part of this work.
+
+5\. Lung Cancer Screening
+-------------------------
+
+- **When**: Q1-Q2 2026
+- **Teams**: Lung, CaaS
+
+We are a developing a new service for a pre-screening questionnaire for the outsourced lung screening programme. For its private beta it will be extracting the cohort from the supplier, and then providing data back to the supplier. For the next stage of work, it will get the cohort directly from GP systems via CaaS, and then provide the cohort along with questionnaire results to the supplier.
 
 6\. AAA
 -------
@@ -63,6 +63,11 @@ By the time we get to AAA, we should hopefully have created all of the solutions
 - **Teams**: Bowel Team 2, CaaS
 
 Bowel currently has seemingly few problems with cohorting, and the team needs to focus on other areas of technical debt. Once that technical debt has been worked on, it will make it easier to do this migration.
+
+8\. Additional considerations
+-----------------------------
+
+We have yet to prioritise Prostate cancer screening and very high-risk breast screening. We expect both of these will be able to use CaaS to support their needs but do not have these in scope of any team.
 
 Summary
 -------
