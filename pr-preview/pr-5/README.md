@@ -1,0 +1,37 @@
+# Digital Screening Architecture Current View
+
+This is a high level diagram of all of the software systems that the Digital Screening programme is responsible for, and some of the external systems that those systems interact with.
+
+This is using [Structurizr](https://structurizr.com/) DSL.
+
+Setup:
+
+```
+make install
+```
+
+Build static site:
+
+```
+make build
+```
+
+Run local server:
+
+```
+make serve
+```
+
+Watch for changes and auto-rebuild:
+
+```
+make watch
+```
+
+Watch for changes and serve (combined):
+
+```
+make watch_and_serve
+```
+
+Visit http://localhost:8080
