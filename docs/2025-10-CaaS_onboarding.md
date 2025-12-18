@@ -27,7 +27,7 @@ This work will need to then consider how to migrate Cervical, Bowel and AAA afte
 3\. Diabetic Eye Screening
 --------------------------
 
-- **When**: Q3 2025-Q1 2026
+- **When**: Q3 2025-Q3 2026
 - **Teams**: DES, CaaS
 
 DES is an outsourced service, but we provide cohorting to the providers. There is an urgent commercial need to find a new solution. Work is currently underway between the two teams, working together to create a solution. This work will require additional funding to get to production.
