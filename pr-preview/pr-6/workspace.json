@@ -1,0 +1,1478 @@
+{
+  "configuration" : {
+    "scope" : "SoftwareSystem"
+  },
+  "description" : "All 6 pathway, currently",
+  "documentation" : { },
+  "id" : 0,
+  "model" : {
+    "softwareSystems" : [ {
+      "documentation" : { },
+      "id" : "1",
+      "name" : "GPES",
+      "properties" : {
+        "structurizr.dsl.identifier" : "gpes"
+      },
+      "relationships" : [ {
+        "destinationId" : "6",
+        "id" : "86",
+        "sourceId" : "1",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "description" : "Provides Registration & demographic feed",
+      "documentation" : { },
+      "id" : "2",
+      "name" : "GP Management Systems and Secondary Care",
+      "properties" : {
+        "structurizr.dsl.identifier" : "gpms"
+      },
+      "relationships" : [ {
+        "destinationId" : "1",
+        "id" : "85",
+        "sourceId" : "2",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "description" : "Provides Demographics feed, Management of cohort, Identify criteria SDRS",
+      "documentation" : { },
+      "id" : "3",
+      "name" : "Personal Demographics Service (PDS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "pds"
+      },
+      "relationships" : [ {
+        "description" : "provide registrations and demographics",
+        "destinationId" : "4",
+        "id" : "23",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "5",
+        "id" : "38",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      }, {
+        "description" : "cohort",
+        "destinationId" : "46",
+        "id" : "49",
+        "sourceId" : "3",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "description" : "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts",
+      "documentation" : { },
+      "id" : "4",
+      "name" : "PI",
+      "properties" : {
+        "structurizr.dsl.identifier" : "pi"
+      },
+      "relationships" : [ {
+        "description" : "perform dq check, send demographic updates",
+        "destinationId" : "14",
+        "id" : "24",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Oracle Queues",
+        "destinationId" : "64",
+        "id" : "70",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Cohort of men due to reach 65 the following year",
+        "destinationId" : "80",
+        "id" : "81",
+        "sourceId" : "4",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "5",
+      "name" : "Cohorting as a Service (CAAS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "caas"
+      },
+      "relationships" : [ {
+        "destinationId" : "13",
+        "id" : "39",
+        "sourceId" : "5",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "6",
+      "name" : "GP2DRS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "gp2drs"
+      },
+      "relationships" : [ {
+        "destinationId" : "82",
+        "id" : "87",
+        "sourceId" : "6",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "7",
+      "name" : "CIS2",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cis2"
+      },
+      "relationships" : [ {
+        "destinationId" : "14",
+        "id" : "36",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "16",
+        "id" : "37",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "46",
+        "id" : "52",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "64",
+        "id" : "77",
+        "sourceId" : "7",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "8",
+      "name" : "MESh",
+      "properties" : {
+        "structurizr.dsl.identifier" : "mesh"
+      },
+      "relationships" : [ {
+        "description" : "participant data",
+        "destinationId" : "15",
+        "id" : "29",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "screening episode outcomes",
+        "destinationId" : "17",
+        "id" : "31",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "lab results",
+        "destinationId" : "46",
+        "id" : "57",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      }, {
+        "description" : "lab results",
+        "destinationId" : "2",
+        "id" : "58",
+        "sourceId" : "8",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "9",
+      "name" : "Notify",
+      "properties" : {
+        "structurizr.dsl.identifier" : "notify"
+      },
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "10",
+      "name" : "Organisation Data Service (ODS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ods"
+      },
+      "relationships" : [ {
+        "description" : "GP Practice details",
+        "destinationId" : "46",
+        "id" : "59",
+        "sourceId" : "10",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Organisation details",
+        "destinationId" : "64",
+        "id" : "79",
+        "sourceId" : "10",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "11",
+      "name" : "NHS.Net Exchange",
+      "properties" : {
+        "structurizr.dsl.identifier" : "nhsnet"
+      },
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "12",
+      "name" : "Data Provisioning Service (DPS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dps"
+      },
+      "tags" : "Element,Software System,NHS England Shared Component"
+    }, {
+      "documentation" : { },
+      "id" : "13",
+      "name" : "Cohort Manager",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cohort_manager"
+      },
+      "relationships" : [ {
+        "destinationId" : "14",
+        "id" : "40",
+        "sourceId" : "13",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "14",
+      "name" : "BS Select",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bs_select"
+      },
+      "relationships" : [ {
+        "description" : "participant data",
+        "destinationId" : "17",
+        "id" : "27",
+        "sourceId" : "14",
+        "tags" : "Relationship"
+      }, {
+        "description" : "manual entry of round plan",
+        "destinationId" : "15",
+        "id" : "33",
+        "sourceId" : "14",
+        "tags" : "Relationship"
+      }, {
+        "description" : "data services: KC63",
+        "destinationId" : "16",
+        "id" : "35",
+        "sourceId" : "14",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "15",
+      "name" : "National Breast Screening Service (NBSS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "nbss"
+      },
+      "relationships" : [ {
+        "description" : "screening episode outcomes",
+        "destinationId" : "8",
+        "id" : "30",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "description" : "send screening results (letter)",
+        "destinationId" : "2",
+        "id" : "34",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "description" : "KC62 as manual CSV upload",
+        "destinationId" : "16",
+        "id" : "41",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "18",
+        "id" : "42",
+        "sourceId" : "15",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "16",
+      "name" : "Breast Screening Information Service (BSIS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bsis"
+      },
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "17",
+      "name" : "Iuvo Clin-ePost",
+      "properties" : {
+        "structurizr.dsl.identifier" : "iuvo"
+      },
+      "relationships" : [ {
+        "description" : "participant data",
+        "destinationId" : "8",
+        "id" : "28",
+        "sourceId" : "17",
+        "tags" : "Relationship"
+      }, {
+        "description" : "screening episode outcomes",
+        "destinationId" : "14",
+        "id" : "32",
+        "sourceId" : "17",
+        "tags" : "Relationship"
+      }, {
+        "description" : "EDIFACT send outcome",
+        "destinationId" : "2",
+        "id" : "76",
+        "sourceId" : "17",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "18",
+      "name" : "Local Picture and Archiving System (PACS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "local_pacs"
+      },
+      "relationships" : [ {
+        "destinationId" : "15",
+        "id" : "43",
+        "sourceId" : "18",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "19",
+      "name" : "Breastscreening Active Radiotherapy Dataset",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bard"
+      },
+      "relationships" : [ {
+        "description" : "manual request for adding people to cohort",
+        "destinationId" : "15",
+        "id" : "25",
+        "sourceId" : "19",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "20",
+      "name" : "Screening History Information Management (SHIM)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "shim"
+      },
+      "relationships" : [ {
+        "description" : "ODBC queries via SSH tunnel over the health and social care network",
+        "destinationId" : "15",
+        "id" : "26",
+        "sourceId" : "20",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "21",
+      "name" : "Imaging Modality (MRI, Mammography, Ultrasound)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "modality"
+      },
+      "relationships" : [ {
+        "description" : "push images",
+        "destinationId" : "18",
+        "id" : "44",
+        "sourceId" : "21",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "22",
+      "name" : "Lab Information Systems (LIMS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "lims"
+      },
+      "relationships" : [ {
+        "description" : "manual entry",
+        "destinationId" : "15",
+        "id" : "45",
+        "sourceId" : "22",
+        "tags" : "Relationship"
+      }, {
+        "description" : "lab results",
+        "destinationId" : "8",
+        "id" : "56",
+        "sourceId" : "22",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "46",
+      "name" : "CSMS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "csms"
+      },
+      "relationships" : [ {
+        "description" : "cohort",
+        "destinationId" : "47",
+        "id" : "50",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      }, {
+        "description" : "notifications to participants",
+        "destinationId" : "9",
+        "id" : "53",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      }, {
+        "description" : "letters to participants",
+        "destinationId" : "48",
+        "id" : "54",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Emails to GP Practices",
+        "destinationId" : "11",
+        "id" : "55",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "12",
+        "id" : "60",
+        "sourceId" : "46",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "47",
+      "name" : "Cervical Home Testing",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cervical_home_testing"
+      },
+      "relationships" : [ {
+        "description" : "invitation flag",
+        "destinationId" : "46",
+        "id" : "51",
+        "sourceId" : "47",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "61",
+        "id" : "62",
+        "sourceId" : "47",
+        "tags" : "Relationship"
+      }, {
+        "destinationId" : "9",
+        "id" : "63",
+        "sourceId" : "47",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "48",
+      "name" : "Capita Notifications",
+      "properties" : {
+        "structurizr.dsl.identifier" : "capita_notifications"
+      },
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "61",
+      "name" : "Cervical Home Testing Provider",
+      "properties" : {
+        "structurizr.dsl.identifier" : "cervical_home_testing_provider"
+      },
+      "tags" : "Element,Software System,External System"
+    }, {
+      "documentation" : { },
+      "id" : "64",
+      "name" : "Bowel Cancer Screening System (BCSS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bcss"
+      },
+      "relationships" : [ {
+        "description" : "ODI ETL",
+        "destinationId" : "65",
+        "id" : "69",
+        "sourceId" : "64",
+        "tags" : "Relationship"
+      }, {
+        "description" : "post letters to participants (manual?)",
+        "destinationId" : "67",
+        "id" : "72",
+        "sourceId" : "64",
+        "tags" : "Relationship"
+      }, {
+        "description" : "FIT requests",
+        "destinationId" : "66",
+        "id" : "74",
+        "sourceId" : "64",
+        "tags" : "Relationship"
+      }, {
+        "description" : "outcome",
+        "destinationId" : "17",
+        "id" : "75",
+        "sourceId" : "64",
+        "tags" : "Relationship"
+      }, {
+        "description" : "notifications to participants",
+        "destinationId" : "9",
+        "id" : "78",
+        "sourceId" : "64",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "65",
+      "name" : "Bowel OBIEE",
+      "properties" : {
+        "structurizr.dsl.identifier" : "bowel_obiee"
+      },
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "description" : "Provides results from FIT Anlalyser",
+      "documentation" : { },
+      "id" : "66",
+      "name" : "FIT Kit Middleware",
+      "properties" : {
+        "structurizr.dsl.identifier" : "fit_middleware"
+      },
+      "relationships" : [ {
+        "description" : "FIT results",
+        "destinationId" : "64",
+        "id" : "73",
+        "sourceId" : "66",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "67",
+      "name" : "RDI",
+      "properties" : {
+        "structurizr.dsl.identifier" : "rdi"
+      },
+      "tags" : "Element,Software System,External System"
+    }, {
+      "description" : "National Disease Registration Service",
+      "documentation" : { },
+      "id" : "68",
+      "name" : "NDRS",
+      "properties" : {
+        "structurizr.dsl.identifier" : "ndrs"
+      },
+      "relationships" : [ {
+        "description" : "lynch cohort (high risk)",
+        "destinationId" : "64",
+        "id" : "71",
+        "sourceId" : "68",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
+    }, {
+      "description" : "Outsourced national system with 38 local providers to access it",
+      "documentation" : { },
+      "id" : "80",
+      "name" : "SMaRT",
+      "properties" : {
+        "structurizr.dsl.identifier" : "aaa"
+      },
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "82",
+      "name" : "HIC",
+      "properties" : {
+        "structurizr.dsl.identifier" : "hic"
+      },
+      "relationships" : [ {
+        "destinationId" : "83",
+        "id" : "88",
+        "sourceId" : "82",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "83",
+      "name" : "Quicksilva",
+      "properties" : {
+        "structurizr.dsl.identifier" : "quicksilva"
+      },
+      "relationships" : [ {
+        "destinationId" : "84",
+        "id" : "89",
+        "sourceId" : "83",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "84",
+      "name" : "DES Screening Service",
+      "properties" : {
+        "structurizr.dsl.identifier" : "des_screening_service"
+      },
+      "tags" : "Element,Software System,Outsourced System"
+    } ]
+  },
+  "name" : "Digital Screening",
+  "properties" : {
+    "structurizr.inspection.error" : "101",
+    "structurizr.inspection.info" : "0",
+    "structurizr.inspection.ignore" : "0",
+    "structurizr.inspection.warning" : "0"
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "background" : "#009639",
+          "color" : "#ffffff",
+          "tag" : "Digital Screening System"
+        }, {
+          "background" : "#a2aaad",
+          "color" : "#222222",
+          "tag" : "External System"
+        }, {
+          "icon" : "https://upload.wikimedia.org/wikipedia/commons/e/e1/Eo_circle_green_arrow-right.svg",
+          "tag" : "Future"
+        }, {
+          "background" : "#ffd700",
+          "color" : "#222222",
+          "tag" : "NHS England Shared Component"
+        }, {
+          "background" : "#6ec1e4",
+          "color" : "#222222",
+          "tag" : "Outsourced System"
+        } ]
+      },
+      "terminology" : { },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+    },
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 3733,
+        "width" : 6116
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 5458,
+        "y" : 2012
+      }, {
+        "id" : "3",
+        "x" : 208,
+        "y" : 508
+      }, {
+        "id" : "4",
+        "x" : 958,
+        "y" : 208
+      }, {
+        "id" : "5",
+        "x" : 958,
+        "y" : 808
+      }, {
+        "id" : "7",
+        "x" : 1708,
+        "y" : 1412
+      }, {
+        "id" : "8",
+        "x" : 3958,
+        "y" : 2012
+      }, {
+        "id" : "13",
+        "x" : 1708,
+        "y" : 808
+      }, {
+        "id" : "14",
+        "x" : 2458,
+        "y" : 804
+      }, {
+        "id" : "15",
+        "x" : 3208,
+        "y" : 2625
+      }, {
+        "id" : "16",
+        "x" : 3958,
+        "y" : 1412
+      }, {
+        "id" : "17",
+        "x" : 4708,
+        "y" : 1408
+      }, {
+        "id" : "18",
+        "x" : 3958,
+        "y" : 3225
+      }, {
+        "id" : "19",
+        "x" : 2458,
+        "y" : 2621
+      }, {
+        "id" : "20",
+        "x" : 2458,
+        "y" : 3221
+      }, {
+        "id" : "21",
+        "x" : 3208,
+        "y" : 3225
+      }, {
+        "id" : "22",
+        "x" : 2458,
+        "y" : 2021
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Breast_Screening",
+      "name" : "System Context View: National Breast Screening Service (NBSS)",
+      "order" : 2,
+      "paperSize" : "A2_Landscape",
+      "relationships" : [ {
+        "id" : "23"
+      }, {
+        "id" : "24",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 658
+        } ]
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "27",
+        "vertices" : [ {
+          "x" : 3658,
+          "y" : 1171
+        }, {
+          "x" : 4408,
+          "y" : 1412
+        } ]
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32",
+        "vertices" : [ {
+          "x" : 4408,
+          "y" : 1112
+        }, {
+          "x" : 3658,
+          "y" : 871
+        } ]
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "34"
+      }, {
+        "id" : "35",
+        "vertices" : [ {
+          "x" : 3658,
+          "y" : 1333
+        } ]
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41",
+        "vertices" : [ {
+          "x" : 3958,
+          "y" : 1862
+        } ]
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "76"
+      } ],
+      "softwareSystemId" : "15"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 3116,
+        "width" : 3866
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 3208,
+        "y" : 208
+      }, {
+        "id" : "3",
+        "x" : 208,
+        "y" : 1108
+      }, {
+        "id" : "4",
+        "x" : 958,
+        "y" : 1108
+      }, {
+        "id" : "7",
+        "x" : 958,
+        "y" : 2308
+      }, {
+        "id" : "9",
+        "x" : 2458,
+        "y" : 2608
+      }, {
+        "id" : "10",
+        "x" : 958,
+        "y" : 508
+      }, {
+        "id" : "17",
+        "x" : 2458,
+        "y" : 208
+      }, {
+        "id" : "64",
+        "x" : 1708,
+        "y" : 1408
+      }, {
+        "id" : "65",
+        "x" : 2458,
+        "y" : 808
+      }, {
+        "id" : "66",
+        "x" : 2458,
+        "y" : 1408
+      }, {
+        "id" : "67",
+        "x" : 2458,
+        "y" : 2008
+      }, {
+        "id" : "68",
+        "x" : 958,
+        "y" : 1708
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Bowel_Screening",
+      "name" : "System Context View: Bowel Cancer Screening System (BCSS)",
+      "order" : 3,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "23"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75",
+        "vertices" : [ {
+          "x" : 2458,
+          "y" : 658
+        } ]
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "78",
+        "vertices" : [ {
+          "x" : 2458,
+          "y" : 2458
+        } ]
+      }, {
+        "id" : "79"
+      } ],
+      "softwareSystemId" : "64"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 716,
+        "width" : 1616
+      },
+      "elements" : [ {
+        "id" : "4",
+        "x" : 208,
+        "y" : 208
+      }, {
+        "id" : "80",
+        "x" : 958,
+        "y" : 208
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "AAA_Screening",
+      "name" : "System Context View: SMaRT",
+      "order" : 4,
+      "paperSize" : "A6_Landscape",
+      "relationships" : [ {
+        "id" : "81"
+      } ],
+      "softwareSystemId" : "80"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 716,
+        "width" : 4616
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 958,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 208,
+        "y" : 208
+      }, {
+        "id" : "6",
+        "x" : 1708,
+        "y" : 208
+      }, {
+        "id" : "82",
+        "x" : 2458,
+        "y" : 208
+      }, {
+        "id" : "83",
+        "x" : 3208,
+        "y" : 208
+      }, {
+        "id" : "84",
+        "x" : 3958,
+        "y" : 208
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Diabetic_Eye_Screening",
+      "name" : "System Context View: DES Screening Service",
+      "order" : 5,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "85"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "89"
+      } ],
+      "softwareSystemId" : "84"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 2816,
+        "width" : 3866
+      },
+      "elements" : [ {
+        "id" : "2",
+        "x" : 1708,
+        "y" : 2308
+      }, {
+        "id" : "3",
+        "x" : 958,
+        "y" : 1108
+      }, {
+        "id" : "7",
+        "x" : 958,
+        "y" : 1708
+      }, {
+        "id" : "8",
+        "x" : 958,
+        "y" : 2308
+      }, {
+        "id" : "9",
+        "x" : 3208,
+        "y" : 2308
+      }, {
+        "id" : "10",
+        "x" : 958,
+        "y" : 508
+      }, {
+        "id" : "11",
+        "x" : 2458,
+        "y" : 208
+      }, {
+        "id" : "12",
+        "x" : 2458,
+        "y" : 808
+      }, {
+        "id" : "22",
+        "x" : 208,
+        "y" : 2308
+      }, {
+        "id" : "46",
+        "x" : 1708,
+        "y" : 1408
+      }, {
+        "id" : "47",
+        "x" : 2458,
+        "y" : 1408
+      }, {
+        "id" : "48",
+        "x" : 2458,
+        "y" : 2008
+      }, {
+        "id" : "61",
+        "x" : 3208,
+        "y" : 1408
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Cervical_Screening",
+      "name" : "System Context View: CSMS",
+      "order" : 6,
+      "paperSize" : "A3_Landscape",
+      "relationships" : [ {
+        "id" : "49"
+      }, {
+        "id" : "50"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53",
+        "vertices" : [ {
+          "x" : 2458,
+          "y" : 2458
+        } ]
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "55",
+        "vertices" : [ {
+          "x" : 2458,
+          "y" : 658
+        } ]
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      } ],
+      "softwareSystemId" : "46"
+    } ],
+    "systemLandscapeViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "description" : "All Systems Context",
+      "dimensions" : {
+        "height" : 8500,
+        "width" : 7616
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 3958,
+        "y" : 583
+      }, {
+        "id" : "2",
+        "x" : 3208,
+        "y" : 583
+      }, {
+        "id" : "3",
+        "x" : 208,
+        "y" : 3600
+      }, {
+        "id" : "4",
+        "x" : 958,
+        "y" : 3600
+      }, {
+        "id" : "5",
+        "x" : 958,
+        "y" : 2700
+      }, {
+        "id" : "6",
+        "x" : 4708,
+        "y" : 583
+      }, {
+        "id" : "7",
+        "x" : 958,
+        "y" : 5121
+      }, {
+        "id" : "8",
+        "x" : 1708,
+        "y" : 587
+      }, {
+        "id" : "9",
+        "x" : 3958,
+        "y" : 6033
+      }, {
+        "id" : "10",
+        "x" : 958,
+        "y" : 6646
+      }, {
+        "id" : "11",
+        "x" : 3208,
+        "y" : 7837
+      }, {
+        "id" : "12",
+        "x" : 3208,
+        "y" : 6637
+      }, {
+        "id" : "13",
+        "x" : 1708,
+        "y" : 2396
+      }, {
+        "id" : "14",
+        "x" : 3208,
+        "y" : 2096
+      }, {
+        "id" : "15",
+        "x" : 958,
+        "y" : 892
+      }, {
+        "id" : "16",
+        "x" : 3958,
+        "y" : 2096
+      }, {
+        "id" : "17",
+        "x" : 2458,
+        "y" : 1187
+      }, {
+        "id" : "18",
+        "x" : 1708,
+        "y" : 1796
+      }, {
+        "id" : "19",
+        "x" : 208,
+        "y" : 892
+      }, {
+        "id" : "20",
+        "x" : 208,
+        "y" : 1492
+      }, {
+        "id" : "21",
+        "x" : 958,
+        "y" : 1796
+      }, {
+        "id" : "22",
+        "x" : 208,
+        "y" : 292
+      }, {
+        "id" : "46",
+        "x" : 2458,
+        "y" : 6033
+      }, {
+        "id" : "47",
+        "x" : 3208,
+        "y" : 5429
+      }, {
+        "id" : "48",
+        "x" : 3208,
+        "y" : 7237
+      }, {
+        "id" : "61",
+        "x" : 3958,
+        "y" : 5429
+      }, {
+        "id" : "64",
+        "x" : 1708,
+        "y" : 7246
+      }, {
+        "id" : "65",
+        "x" : 2458,
+        "y" : 6642
+      }, {
+        "id" : "66",
+        "x" : 2458,
+        "y" : 7242
+      }, {
+        "id" : "67",
+        "x" : 2458,
+        "y" : 7842
+      }, {
+        "id" : "68",
+        "x" : 958,
+        "y" : 7246
+      }, {
+        "id" : "80",
+        "x" : 1708,
+        "y" : 2996
+      }, {
+        "id" : "82",
+        "x" : 5458,
+        "y" : 583
+      }, {
+        "id" : "83",
+        "x" : 6208,
+        "y" : 583
+      }, {
+        "id" : "84",
+        "x" : 6958,
+        "y" : 583
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "digital_screening",
+      "name" : "System Landscape View",
+      "order" : 1,
+      "paperSize" : "A0_Portrait",
+      "relationships" : [ {
+        "id" : "23"
+      }, {
+        "id" : "24",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 3446
+        } ]
+      }, {
+        "id" : "25"
+      }, {
+        "id" : "26"
+      }, {
+        "id" : "27"
+      }, {
+        "id" : "28"
+      }, {
+        "id" : "29"
+      }, {
+        "id" : "30"
+      }, {
+        "id" : "31"
+      }, {
+        "id" : "32"
+      }, {
+        "id" : "33"
+      }, {
+        "id" : "34",
+        "vertices" : [ {
+          "x" : 1708,
+          "y" : 437
+        }, {
+          "x" : 2158,
+          "y" : 437
+        }, {
+          "x" : 2908,
+          "y" : 504
+        } ]
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "36",
+        "vertices" : [ {
+          "x" : 2908,
+          "y" : 3217
+        } ]
+      }, {
+        "id" : "37",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 4704
+        }, {
+          "x" : 2908,
+          "y" : 3812
+        } ]
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41",
+        "vertices" : [ {
+          "x" : 1708,
+          "y" : 208
+        }, {
+          "x" : 2158,
+          "y" : 208
+        }, {
+          "x" : 2908,
+          "y" : 254
+        }, {
+          "x" : 3658,
+          "y" : 433
+        } ]
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45"
+      }, {
+        "id" : "49",
+        "vertices" : [ {
+          "x" : 958,
+          "y" : 5571
+        }, {
+          "x" : 1708,
+          "y" : 5937
+        } ]
+      }, {
+        "id" : "50"
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "54",
+        "vertices" : [ {
+          "x" : 2908,
+          "y" : 6492
+        }, {
+          "x" : 3208,
+          "y" : 7087
+        } ]
+      }, {
+        "id" : "55",
+        "vertices" : [ {
+          "x" : 2908,
+          "y" : 6492
+        }, {
+          "x" : 3208,
+          "y" : 7687
+        } ]
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "57",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 1646
+        } ]
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "59",
+        "vertices" : [ {
+          "x" : 2158,
+          "y" : 6412
+        } ]
+      }, {
+        "id" : "60"
+      }, {
+        "id" : "62"
+      }, {
+        "id" : "63"
+      }, {
+        "id" : "69"
+      }, {
+        "id" : "70"
+      }, {
+        "id" : "71"
+      }, {
+        "id" : "72"
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "75"
+      }, {
+        "id" : "76"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "78",
+        "vertices" : [ {
+          "x" : 2458,
+          "y" : 8292
+        }, {
+          "x" : 2908,
+          "y" : 8292
+        }, {
+          "x" : 3658,
+          "y" : 8287
+        } ]
+      }, {
+        "id" : "79"
+      }, {
+        "id" : "81"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "86"
+      }, {
+        "id" : "87"
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "89"
+      } ]
+    } ]
+  }
+}

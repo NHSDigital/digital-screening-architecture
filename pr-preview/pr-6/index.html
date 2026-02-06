@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C4 Diagrams — Structurizr Mini</title>
+    <link rel='stylesheet' href='./structurizr_ui_styles.css' />
+    
+    
+    <script type="module" crossorigin src="./assets/index-3ac3eaef.js"></script>
+    <link rel="stylesheet" href="./assets/index-a7807abb.css">
+  </head>
+  <body>
+    <div class='layout'>
+      <div class='layout__loading'>
+        <span class="loader"></span>
+        Loading...
+      </div>
+
+      <div class='layout__nav is-hidden'>
+        <input id="searchbox" class='input' aria-label='Diagram navigation' placeholder='Choose Pathway' />
+        <button id='export' class='btn'>Export PNG</button>
+
+        <div class='nav-links'></div>
+      </div>
+
+      <div class='layout__diagram is-hidden' id="structurizr-diagram-target"></div>
+      <div id='color-legend' class='color-legend'>
+      </div>
+
+    </div>
+
+    <script src='./structurizr_ui_scripts.js'></script>
+    <script src='./legend.js'></script>
+    <style>
+        .color-legend {
+          padding: 5px;
+          border: 1px solid #000;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background: rgba(255, 255, 255, 0.9);
+          z-index: 1000;
+        }
+                
+        .legend-item {
+          display: flex;
+          align-items: center;
+          margin: 4px;
+        }
+        
+        .legend-color {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #333;
+          margin-right: 10px;
+          flex-shrink: 0;
+        }
+        
+        .legend-label {
+          font-size: 13px;
+          color: #555;
+        }
+
+    </style>
+    
+  </body>
+</html>
