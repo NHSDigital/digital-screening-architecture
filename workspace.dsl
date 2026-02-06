@@ -61,6 +61,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     nbss -> gpms "send screening results (letter)"
     bs_select -> bsis "data services: KC63"
     cis2 -> bs_select
+    cis2 -> bsis
 
     pds -> caas
     caas -> cohort_manager
