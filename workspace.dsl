@@ -62,6 +62,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     bs_select -> bsis "data services: KC63"
     cis2 -> bs_select
     cis2 -> bsis
+    cis2 -> cohort_manager
 
     pds -> caas
     caas -> cohort_manager
