@@ -63,7 +63,7 @@
       } ],
       "tags" : "Element,Software System,NHS England Shared Component"
     }, {
-      "description" : "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts",
+      "description" : "Data Quality Checks & Demographics, Aggregations, support by a Bureau team of DQ experts",
       "documentation" : { },
       "id" : "4",
       "name" : "PI",
@@ -71,7 +71,7 @@
         "structurizr.dsl.identifier" : "pi"
       },
       "relationships" : [ {
-        "description" : "perform dq check, send demographic updates",
+        "description" : "perform DQ check, send demographic updates",
         "destinationId" : "14",
         "id" : "24",
         "sourceId" : "4",
@@ -155,7 +155,7 @@
     }, {
       "documentation" : { },
       "id" : "8",
-      "name" : "MESh",
+      "name" : "MESH",
       "properties" : {
         "structurizr.dsl.identifier" : "mesh"
       },
@@ -355,7 +355,7 @@
     }, {
       "documentation" : { },
       "id" : "19",
-      "name" : "Breastscreening Active Radiotherapy Dataset",
+      "name" : "Breast screening After Radiotherapy Dataset",
       "properties" : {
         "structurizr.dsl.identifier" : "bard"
       },
@@ -545,7 +545,7 @@
       },
       "tags" : "Element,Software System,Digital Screening System"
     }, {
-      "description" : "Provides results from FIT Anlalyser",
+      "description" : "Provides results from FIT Analyser",
       "documentation" : { },
       "id" : "67",
       "name" : "FIT Kit Middleware",
