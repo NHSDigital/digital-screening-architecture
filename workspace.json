@@ -629,11 +629,40 @@
         "structurizr.dsl.identifier" : "des_screening_service"
       },
       "tags" : "Element,Software System,Outsourced System"
+    }, {
+      "documentation" : { },
+      "id" : "91",
+      "name" : "Lung Cancer Screening (LCS)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "lcs"
+      },
+      "tags" : "Element,Software System,Digital Screening System"
+    }, {
+      "documentation" : { },
+      "id" : "92",
+      "name" : "InHealth (Spectra)",
+      "properties" : {
+        "structurizr.dsl.identifier" : "spectra"
+      },
+      "relationships" : [ {
+        "description" : "Initial cohort aged 55-74 invited via letter / SMS",
+        "destinationId" : "91",
+        "id" : "93",
+        "sourceId" : "92",
+        "tags" : "Relationship"
+      }, {
+        "description" : "Response sharing for clinical comparison",
+        "destinationId" : "91",
+        "id" : "94",
+        "sourceId" : "92",
+        "tags" : "Relationship"
+      } ],
+      "tags" : "Element,Software System,External System"
     } ]
   },
   "name" : "Digital Screening",
   "properties" : {
-    "structurizr.inspection.error" : "103",
+    "structurizr.inspection.error" : "107",
     "structurizr.inspection.info" : "0",
     "structurizr.inspection.ignore" : "0",
     "structurizr.inspection.warning" : "0"
@@ -1121,6 +1150,31 @@
         "id" : "64"
       } ],
       "softwareSystemId" : "47"
+    }, {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "LeftRight",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "dimensions" : {
+        "height" : 716,
+        "width" : 866
+      },
+      "elements" : [ {
+        "id" : "91",
+        "x" : 208,
+        "y" : 208
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Lung_Cancer_Screening",
+      "name" : "System Context View: Lung Cancer Screening (LCS)",
+      "order" : 7,
+      "paperSize" : "A6_Landscape",
+      "softwareSystemId" : "91"
     } ],
     "systemLandscapeViews" : [ {
       "automaticLayout" : {
@@ -1134,149 +1188,157 @@
       },
       "description" : "All Systems Context",
       "dimensions" : {
-        "height" : 8937,
+        "height" : 9462,
         "width" : 7616
       },
       "elements" : [ {
         "id" : "1",
         "x" : 3958,
-        "y" : 575
+        "y" : 1100
       }, {
         "id" : "2",
         "x" : 3208,
-        "y" : 575
+        "y" : 1100
       }, {
         "id" : "3",
         "x" : 208,
-        "y" : 5433
+        "y" : 5958
       }, {
         "id" : "4",
         "x" : 958,
-        "y" : 6037
+        "y" : 6562
       }, {
         "id" : "5",
         "x" : 958,
-        "y" : 2704
+        "y" : 3229
       }, {
         "id" : "6",
         "x" : 4708,
-        "y" : 575
+        "y" : 1100
       }, {
         "id" : "7",
         "x" : 958,
-        "y" : 3608
+        "y" : 4133
       }, {
         "id" : "8",
         "x" : 1708,
-        "y" : 587
+        "y" : 1112
       }, {
         "id" : "9",
         "x" : 3958,
-        "y" : 4817
+        "y" : 5342
       }, {
         "id" : "10",
         "x" : 958,
-        "y" : 6646
+        "y" : 7171
       }, {
         "id" : "11",
         "x" : 3208,
-        "y" : 6621
+        "y" : 7146
       }, {
         "id" : "12",
         "x" : 3208,
-        "y" : 5421
+        "y" : 5946
       }, {
         "id" : "13",
         "x" : 1708,
-        "y" : 2396
+        "y" : 2921
       }, {
         "id" : "14",
         "x" : 3208,
-        "y" : 2087
+        "y" : 2612
       }, {
         "id" : "15",
         "x" : 958,
-        "y" : 892
+        "y" : 1417
       }, {
         "id" : "16",
         "x" : 3958,
-        "y" : 2087
+        "y" : 2612
       }, {
         "id" : "17",
         "x" : 2458,
-        "y" : 1179
+        "y" : 1704
       }, {
         "id" : "18",
         "x" : 1708,
-        "y" : 1796
+        "y" : 2321
       }, {
         "id" : "19",
         "x" : 208,
-        "y" : 892
+        "y" : 1417
       }, {
         "id" : "20",
         "x" : 208,
-        "y" : 1492
+        "y" : 2017
       }, {
         "id" : "21",
         "x" : 958,
-        "y" : 1796
+        "y" : 2321
       }, {
         "id" : "22",
         "x" : 208,
-        "y" : 292
+        "y" : 817
       }, {
         "id" : "47",
         "x" : 2458,
-        "y" : 5121
+        "y" : 5650
       }, {
         "id" : "48",
         "x" : 3208,
-        "y" : 4212
+        "y" : 4737
       }, {
         "id" : "49",
         "x" : 3208,
-        "y" : 6021
+        "y" : 6546
       }, {
         "id" : "62",
         "x" : 3958,
-        "y" : 4212
+        "y" : 4737
       }, {
         "id" : "65",
         "x" : 1708,
-        "y" : 7246
+        "y" : 7771
       }, {
         "id" : "66",
         "x" : 2458,
-        "y" : 7829
+        "y" : 8354
       }, {
         "id" : "67",
         "x" : 2458,
-        "y" : 8429
+        "y" : 8954
       }, {
         "id" : "68",
         "x" : 2458,
-        "y" : 6621
+        "y" : 7146
       }, {
         "id" : "69",
         "x" : 958,
-        "y" : 7246
+        "y" : 7771
       }, {
         "id" : "81",
         "x" : 1708,
-        "y" : 6037
+        "y" : 6562
       }, {
         "id" : "83",
         "x" : 5458,
-        "y" : 575
+        "y" : 1100
       }, {
         "id" : "84",
         "x" : 6208,
-        "y" : 575
+        "y" : 1100
       }, {
         "id" : "85",
         "x" : 6958,
-        "y" : 575
+        "y" : 1100
+      }, {
+        "id" : "91",
+        "x" : 958,
+        "y" : 208
+      }, {
+        "id" : "92",
+        "x" : 208,
+        "y" : 208
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "digital_screening",
@@ -1309,13 +1371,13 @@
         "id" : "34",
         "vertices" : [ {
           "x" : 1708,
-          "y" : 437
+          "y" : 962
         }, {
           "x" : 2158,
-          "y" : 437
+          "y" : 962
         }, {
           "x" : 2908,
-          "y" : 500
+          "y" : 1025
         } ]
       }, {
         "id" : "35"
@@ -1325,7 +1387,7 @@
         "id" : "37",
         "vertices" : [ {
           "x" : 2158,
-          "y" : 3479
+          "y" : 4004
         } ]
       }, {
         "id" : "38"
@@ -1333,7 +1395,7 @@
         "id" : "39",
         "vertices" : [ {
           "x" : 958,
-          "y" : 3458
+          "y" : 3983
         } ]
       }, {
         "id" : "40"
@@ -1343,16 +1405,16 @@
         "id" : "42",
         "vertices" : [ {
           "x" : 1708,
-          "y" : 208
+          "y" : 733
         }, {
           "x" : 2158,
-          "y" : 208
+          "y" : 733
         }, {
           "x" : 2908,
-          "y" : 254
+          "y" : 779
         }, {
           "x" : 3658,
-          "y" : 425
+          "y" : 950
         } ]
       }, {
         "id" : "43"
@@ -1378,7 +1440,7 @@
         "id" : "56",
         "vertices" : [ {
           "x" : 3208,
-          "y" : 6471
+          "y" : 6996
         } ]
       }, {
         "id" : "57"
@@ -1386,7 +1448,7 @@
         "id" : "58",
         "vertices" : [ {
           "x" : 2158,
-          "y" : 1646
+          "y" : 2171
         } ]
       }, {
         "id" : "59"
@@ -1394,7 +1456,7 @@
         "id" : "60",
         "vertices" : [ {
           "x" : 2158,
-          "y" : 6487
+          "y" : 7012
         } ]
       }, {
         "id" : "61"
@@ -1408,7 +1470,7 @@
         "id" : "71",
         "vertices" : [ {
           "x" : 1408,
-          "y" : 6496
+          "y" : 7021
         } ]
       }, {
         "id" : "72"
@@ -1418,7 +1480,7 @@
         "id" : "74",
         "vertices" : [ {
           "x" : 2458,
-          "y" : 8129
+          "y" : 8654
         } ]
       }, {
         "id" : "75"
@@ -1426,7 +1488,7 @@
         "id" : "76",
         "vertices" : [ {
           "x" : 2158,
-          "y" : 6487
+          "y" : 7012
         } ]
       }, {
         "id" : "77"
@@ -1434,13 +1496,13 @@
         "id" : "78",
         "vertices" : [ {
           "x" : 1708,
-          "y" : 6487
+          "y" : 7012
         } ]
       }, {
         "id" : "79",
         "vertices" : [ {
           "x" : 3658,
-          "y" : 7071
+          "y" : 7596
         } ]
       }, {
         "id" : "80"
@@ -1456,6 +1518,10 @@
         "id" : "89"
       }, {
         "id" : "90"
+      }, {
+        "id" : "93"
+      }, {
+        "id" : "94"
       } ]
     } ]
   }

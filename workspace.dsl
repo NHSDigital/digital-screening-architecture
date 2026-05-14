@@ -129,6 +129,13 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     gp2drs -> hic
     hic -> quicksilva
     quicksilva -> des_screening_service
+
+    // Lung Screening Pathway
+    lcs = digital_screening_system "Lung Cancer Screening (LCS)"
+    spectra = external_system "InHealth (Spectra)"
+
+    spectra -> lcs "Initial cohort aged 55-74 invited via letter / SMS"
+    spectra -> lcs "Response sharing for clinical comparison"
   }
 
   configuration {
@@ -161,6 +168,11 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 
     systemContext csms "Cervical_Screening" {
       include csms cervical_home_testing pds cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
+        autolayout lr
+    }
+
+    systemContext lcs "Lung_Cancer_Screening" {
+      include lcs
         autolayout lr
     }
 
