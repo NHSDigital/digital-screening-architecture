@@ -28,6 +28,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     mesh = nhs_shared_component "MESH"
     notify = nhs_shared_component "Notify"
     ods = nhs_shared_component "Organisation Data Service (ODS)"
+    nhs_login = nhs_shared_component "NHS login"
     nhsnet = nhs_shared_component "NHS.Net Exchange"
     dps = nhs_shared_component "Data Provisioning Service (DPS)"
 
@@ -129,6 +130,14 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     gp2drs -> hic
     hic -> quicksilva
     quicksilva -> des_screening_service
+
+    // Lung Screening Pathway
+    lcs = digital_screening_system "Lung Cancer Screening (LCS)"
+    spectra = external_system "InHealth (Spectra)"
+
+    spectra -> lcs "Initial cohort aged 55-74 invited via letter / SMS"
+    spectra -> lcs "Response sharing for clinical comparison"
+    nhs_login -> lcs "Participant login and data"
   }
 
   configuration {
@@ -161,6 +170,11 @@ workspace "Digital Screening" "All 6 pathway, currently" {
 
     systemContext csms "Cervical_Screening" {
       include csms cervical_home_testing pds cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
+        autolayout lr
+    }
+
+    systemContext lcs "Lung_Cancer_Screening" {
+      include lcs
         autolayout lr
     }
 
