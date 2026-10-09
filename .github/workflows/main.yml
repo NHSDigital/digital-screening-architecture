@@ -11,12 +11,14 @@ on:
     branches:
       - main
 
-concurrency: preview-${{ github.ref }}
-
 jobs:
   deploy-preview:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
+    # Both jobs push to gh-pages; a shared group stops one overwriting the other.
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,6 +28,9 @@ jobs:
   deploy-main:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    concurrency:
+      group: gh-pages-deploy
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
