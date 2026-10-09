@@ -663,8 +663,7 @@
           "tag" : "Outsourced System"
         } ]
       },
-      "terminology" : { },
-      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+      "terminology" : { }
     },
     "systemContextViews" : [ {
       "automaticLayout" : {
