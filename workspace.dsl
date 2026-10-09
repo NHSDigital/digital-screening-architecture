@@ -164,8 +164,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
         autolayout lr
     }
 
-    theme default
-
       styles {
         element "Digital Screening System" {
           background #009639
