@@ -707,8 +707,7 @@
           "tag" : "Outsourced System"
         } ]
       },
-      "terminology" : { },
-      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ]
+      "terminology" : { }
     },
     "systemContextViews" : [ {
       "automaticLayout" : {
@@ -1177,19 +1176,34 @@
         "vertices" : false
       },
       "dimensions" : {
-        "height" : 716,
-        "width" : 866
+        "height" : 1316,
+        "width" : 1616
       },
       "elements" : [ {
-        "id" : "92",
+        "id" : "11",
         "x" : 208,
         "y" : 208
+      }, {
+        "id" : "92",
+        "x" : 958,
+        "y" : 808
+      }, {
+        "id" : "93",
+        "x" : 208,
+        "y" : 808
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "Lung_Cancer_Screening",
       "name" : "System Context View: Lung Cancer Screening (LCS)",
       "order" : 7,
-      "paperSize" : "A6_Landscape",
+      "paperSize" : "A5_Landscape",
+      "relationships" : [ {
+        "id" : "94"
+      }, {
+        "id" : "95"
+      }, {
+        "id" : "96"
+      } ],
       "softwareSystemId" : "92"
     } ],
     "systemLandscapeViews" : [ {

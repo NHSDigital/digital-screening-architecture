@@ -174,11 +174,9 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     }
 
     systemContext lcs "Lung_Cancer_Screening" {
-      include lcs
+      include lcs nhs_login spectra
         autolayout lr
     }
-
-    theme default
 
       styles {
         element "Digital Screening System" {
