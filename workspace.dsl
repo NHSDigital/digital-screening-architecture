@@ -21,11 +21,11 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     gpes = nhs_shared_component "GPES"
     gpms = external_system "GP Management Systems and Secondary Care" "Provides Registration & demographic feed"
     pds = nhs_shared_component "Personal Demographics Service (PDS)" "Provides Demographics feed, Management of cohort, Identify criteria SDRS"
-    pi = digital_screening_system "PI" "Data Quality Checks & Demogaraphics, Aggregations, support by a Bureau team of DQ experts"
+    pi = digital_screening_system "PI" "Data Quality Checks & Demographics, Aggregations, support by a Bureau team of DQ experts"
     caas = nhs_shared_component "Cohorting as a Service (CAAS)"
     gp2drs = digital_screening_system "GP2DRS"
     cis2 = nhs_shared_component "CIS2"
-    mesh = nhs_shared_component "MESh"
+    mesh = nhs_shared_component "MESH"
     notify = nhs_shared_component "Notify"
     ods = nhs_shared_component "Organisation Data Service (ODS)"
     nhsnet = nhs_shared_component "NHS.Net Exchange"
@@ -38,14 +38,14 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     bsis = digital_screening_system "Breast Screening Information Service (BSIS)"
     iuvo = outsourced_system "Iuvo Clin-ePost"
     local_pacs = external_system "Local Picture and Archiving System (PACS)"
-    // BARD is going to be replace by National Disease Registration Service (NDRS) (resusable component)
-    bard = external_system "Breastscreening Active Radiotherapy Dataset"
+    // BARD is going to be replace by National Disease Registration Service (NDRS) (reusable component)
+    bard = external_system "Breast screening After Radiotherapy Dataset"
     shim = external_system "Screening History Information Management (SHIM)"
     modality = external_system "Imaging Modality (MRI, Mammography, Ultrasound)"
     lims = external_system "Lab Information Systems (LIMS)"
 
     pds -> pi "provide registrations and demographics"
-    pi -> bs_select "perform dq check, send demographic updates"
+    pi -> bs_select "perform DQ check, send demographic updates"
     bard -> nbss "manual request for adding people to cohort"
     shim -> nbss "ODBC queries via SSH tunnel over the health and social care network"
 
@@ -61,12 +61,14 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     nbss -> gpms "send screening results (letter)"
     bs_select -> bsis "data services: KC63"
     cis2 -> bs_select
+    cis2 -> bsis
+    cis2 -> cohort_manager
 
     pds -> caas
     caas -> cohort_manager
     cohort_manager -> bs_select
     nbss -> bsis "KC62 as manual CSV upload"
-    // TODO: explore how NBSS inteacts with PACS machine
+    // TODO: explore how NBSS interacts with PACS machine
     nbss -> local_pacs
     local_pacs -> nbss
     modality -> local_pacs "push images"
@@ -96,7 +98,7 @@ workspace "Digital Screening" "All 6 pathway, currently" {
     // Bowel Screening Pathway
     bcss = digital_screening_system "Bowel Cancer Screening System (BCSS)"
     bowel_obiee = digital_screening_system "Bowel OBIEE"
-    fit_middleware = outsourced_system "FIT Kit Middleware" "Provides results from FIT Anlalyser"
+    fit_middleware = outsourced_system "FIT Kit Middleware" "Provides results from FIT Analyser"
     rdi = external_system "RDI"
     ndrs = external_system "NDRS" "National Disease Registration Service"
 
@@ -161,8 +163,6 @@ workspace "Digital Screening" "All 6 pathway, currently" {
       include csms cervical_home_testing pds cis2 notify capita_notifications lims ods cervical_home_testing_provider mesh gpms nhsnet dps
         autolayout lr
     }
-
-    theme default
 
       styles {
         element "Digital Screening System" {
